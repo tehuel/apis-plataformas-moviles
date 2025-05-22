@@ -6,7 +6,8 @@
   "kv_namespaces": [
     {
       "binding": "COUNTER_KV",
-      "id": "4ffb8617cddb44fab9141108247e3808"
+      "id": "4ffb8617cddb44fab9141108247e3808",
+      "preview_id": "7485e079193544afb5c6bc19fe152fc2"
     }
   ]
   // "compatibility_flags": [

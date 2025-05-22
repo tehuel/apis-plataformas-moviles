@@ -1,13 +1,12 @@
 import { Hono } from 'hono'
-
-type Bindings = {
-  COUNTER_KV: KVNamespace
-}
+import count from './counter'
 
 const app = new Hono()
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
 })
+
+app.route('/count/', count)
 
 export default app
