@@ -1,0 +1,72 @@
+{
+    "Título": "Ténico en Programación",
+    "Espacios Curriculares": {
+        "Séptimo": [
+            {
+                "Nombre": "Practicas Profesionalizantes del sector Programación",
+                "Carga Horaria": {
+                    "Semanal": 6,
+                    "Total": 216
+                }
+            },
+
+            {
+                "Nombre": "Emprendimientos e Innovación Productiva",
+                "Area": "Formación Cientifico Tecnológica",
+                "Carga Horaria": {
+                    "Semanal": 2,
+                    "Total": 72
+                }
+            },
+            {
+                "Nombre": "Evaluación de Proyectos",
+                "Area": "Formación Cientifico Tecnológica",
+                "Carga Horaria": {
+                    "Semanal": 2,
+                    "Total": 72
+                }
+            },
+            {
+                "Nombre": "Organización y Métodos",
+                "Area": "Formación Cientifico Tecnológica",
+                "Carga Horaria": {
+                    "Semanal": 2,
+                    "Total": 72
+                }
+            },
+            {
+                "Nombre": "Modelos y Sistems II",
+                "Area": "Formación Cientifico Tecnológica",
+                "Carga Horaria": {
+                    "Semanal": 3,
+                    "Total": 108
+                }
+            },
+
+            {
+                "Nombre": "Desarrollo de Software para Aplicaciones Móviles",
+                "Area": "Formación Técnica Específica",
+                "Carga Horaria": {
+                    "Semanal": 4,
+                    "Total": 144
+                }
+            },
+            {
+                "Nombre": "Diseño e Implementación de Sitios Web",
+                "Area": "Formación Técnica Específica",
+                "Carga Horaria": {
+                    "Semanal": 4,
+                    "Total": 144
+                }
+            },
+            {
+                "Nombre": "Proyecto Integrador",
+                "Area": "Formación Técnica Específica",
+                "Carga Horaria": {
+                    "Semanal": 4,
+                    "Total": 144
+                }
+            }
+        ]
+    }
+}
