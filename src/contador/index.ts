@@ -8,18 +8,18 @@ const app = new Hono<{ Bindings: Bindings }>()
 
 app.get('/', (c) => {
     return c.json({
-        title: 'Count API',
-        description: 'A simple API to count things',
+        'título': 'API Contador',
+        'descripción': 'Una API para contar',
         endpoints: [
             { 
-                method: 'GET', 
-                path: '/count/:name',
-                description: 'Get the current count for a given name',
+                'método': 'GET', 
+                ruta: '/contador/:nombre',
+                'descripción': 'Obtiene el valor actual del contador :nombre',
             },
             { 
-                method: 'POST', 
-                path: '/count/:name',
-                description: 'Increment and get the current count for a given name',
+                'método': 'POST', 
+                ruta: '/contador/:nombre',
+                'descripción': 'Incrementa y obtiene el valor actual del contador :nombre',
             },
         ],
     })

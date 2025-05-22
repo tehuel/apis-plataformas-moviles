@@ -1,12 +1,18 @@
 import { Hono } from 'hono'
-import count from './counter'
+import contador from './contador'
 
 const app = new Hono()
 
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.json({
+    'título': 'APIs de Plataformas Móviles',
+    'descripción': 'Una colección de APIs para plataformas móviles',
+    'recursos': {
+      '/contador/': 'API para contar',
+    },
+  })
 })
 
-app.route('/count/', count)
+app.route('/contador/', contador)
 
 export default app
