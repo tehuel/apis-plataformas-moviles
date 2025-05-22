@@ -7,7 +7,22 @@ type Bindings = {
 const app = new Hono<{ Bindings: Bindings }>()
 
 app.get('/', (c) => {
-    return c.text('Count API!')
+    return c.json({
+        title: 'Count API',
+        description: 'A simple API to count things',
+        endpoints: [
+            { 
+                method: 'GET', 
+                path: '/count/:name',
+                description: 'Get the current count for a given name',
+            },
+            { 
+                method: 'POST', 
+                path: '/count/:name',
+                description: 'Increment and get the current count for a given name',
+            },
+        ],
+    })
 })
 
 app.get('/:name', async (c) => {
