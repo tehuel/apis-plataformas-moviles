@@ -20,11 +20,11 @@ app.get('/', (c) => {
                 'ruta': '/comidas/lista',
                 'descripción': 'Devuelve una lista de comidas argentinas',
                 'parametros (opcionales)': {
-                    'grupo': 'Filtrar listado por grupo (salados, dulces, bebidas) [por defecto: no filtrar]',
+                    'grupo': 'Filtrar listado por grupo (salados, dulces, bebidas) [por defecto: ninguno]',
                     'ordenar_campo': 'Campo por el que se ordena (nombre, grupo, tipo, region, descripcion) [por defecto: nombre]',
                     'ordenar_sentido': 'Sentido del orden de la lista (asc, desc) [por defecto: asc]',
                     'pagina': 'Número de página [por defecto: 1]',
-                    'limite': 'Número máximode elementos por página [por defecto: 5]',
+                    'limite': 'Número máximo de elementos por página [por defecto: 5]',
                 },
             },
         ],
