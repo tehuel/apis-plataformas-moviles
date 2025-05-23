@@ -1,8 +1,10 @@
 import { Hono } from 'hono'
+import { trimTrailingSlash } from 'hono/trailing-slash'
 import contador from './contador'
 import comidas from './comidas'
 
 const app = new Hono()
+app.use(trimTrailingSlash())
 
 app.get('/', (c) => {
   return c.json({
@@ -15,7 +17,7 @@ app.get('/', (c) => {
   })
 })
 
-app.route('/contador/', contador)
-app.route('/comidas/', comidas)
+app.route('/contador', contador)
+app.route('/comidas', comidas)
 
 export default app
