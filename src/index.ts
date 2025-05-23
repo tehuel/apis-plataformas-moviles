@@ -9,8 +9,8 @@ app.get('/', (c) => {
     'título': 'APIs de Plataformas Móviles',
     'descripción': 'Una colección de APIs para plataformas móviles',
     'recursos': {
-      '/contador/': 'API para contar',
-      '/comidas/': 'API de comidas argentinas',
+      '/contador': 'API para contar',
+      '/comidas': 'API de comidas argentinas',
     },
   })
 })
