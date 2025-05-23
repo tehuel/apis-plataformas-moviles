@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "api-plamov",
+  "name": "apis-plataformas-moviles",
   "main": "src/index.ts",
   "compatibility_date": "2025-05-22",
   "kv_namespaces": [
