@@ -40,7 +40,8 @@
         ],
         "region": "Todo el país",
         "ingredientes_principales": [
-            "carne vacuna o pollo",
+            "carne vacuna",
+            "pollo",
             "pan rallado",
             "huevo",
             "ajo",
@@ -60,7 +61,7 @@
             "zapallo",
             "porotos",
             "chorizo",
-            "carne"
+            "carne vacuna"
         ]
     },
     {
@@ -118,7 +119,8 @@
         "region": "Noroeste",
         "ingredientes_principales": [
             "maíz",
-            "carne vacuna o de cerdo",
+            "carne vacuna",
+            "cerdo",
             "huevo",
             "cebolla",
             "chala de maíz"
@@ -148,7 +150,7 @@
         ],
         "region": "Todo el país",
         "ingredientes_principales": [
-            "carne con hueso",
+            "carne vacuna con hueso",
             "papas",
             "zanahoria",
             "zapallo",
@@ -229,7 +231,8 @@
             "dulce de leche",
             "manteca",
             "azúcar",
-            "chocolate o glasé"
+            "chocolate",
+            "glasé"
         ]
     },
     {
@@ -288,7 +291,8 @@
         "region": "Todo el país (popular en cantinas)",
         "ingredientes_principales": [
             "queso",
-            "dulce de membrillo o batata"
+            "dulce de membrillo",
+            "dulce de batata"
         ]
     },
     {
@@ -316,7 +320,8 @@
         "region": "Todo el país",
         "ingredientes_principales": [
             "queso fresco",
-            "dulce de batata o membrillo"
+            "dulce de batata",
+            "dulce de membrillo"
         ]
     },
     {
@@ -337,7 +342,7 @@
     },
     {
         "nombre": "Pastafrola",
-        "descripcion": "Tarta con base de masa quebrada y relleno de dulce (membrillo, batata o guayaba), cubierta con tiras de masa enrejadas.",
+        "descripcion": "Tarta con base de masa quebrada y relleno de dulce (membrillo, batata, dulce de leche), cubierta con tiras de masa enrejadas.",
         "grupo": "Dulces",
         "tipo": [
             "Tarta dulce"
@@ -347,8 +352,10 @@
             "harina",
             "manteca",
             "azúcar",
-            "huevos",
-            "dulce de membrillo"
+            "huevo",
+            "dulce de membrillo",
+            "dulce de batata",
+            "dulce de leche"
         ]
     },
     {
