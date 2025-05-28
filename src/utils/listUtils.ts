@@ -28,3 +28,20 @@ export function assertInList<T extends string>(value: string, validList: T[], pa
         throw new Error(`El valor "${value}" no es válido para el parámetro "${paramName}". Valores válidos: ${JSON.stringify(validList)}.`);
     }
 }
+
+export function searchByTerm<T>(data: T[], term: string, fields: (keyof T)[]): T[] {
+    if (!term) return data;
+    const lowerTerm = term.toLowerCase();
+    return data.filter(item =>
+        fields.some(field => {
+            const value = item[field];
+            if (typeof value === 'string') {
+                return value.toLowerCase().includes(lowerTerm);
+            }
+            if (Array.isArray(value)) {
+                return value.some(v => typeof v === 'string' && v.toLowerCase().includes(lowerTerm));
+            }
+            return false;
+        })
+    );
+}
