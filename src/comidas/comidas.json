@@ -19,8 +19,8 @@
         "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
         "grupo": "Salados",
         "tipo": [
-            "Entrada",
-            "plato principal"
+            "Principal",
+            "Entrada"
         ],
         "region": "Noroeste, Cuyo, Tucumán",
         "ingredientes_principales": [
@@ -69,7 +69,7 @@
         "grupo": "Salados",
         "tipo": [
             "Comida callejera",
-            "entrada"
+            "Entrada"
         ],
         "region": "Todo el país",
         "ingredientes_principales": [
@@ -161,7 +161,7 @@
         "grupo": "Salados",
         "tipo": [
             "Comida fría",
-            "merienda"
+            "Merienda"
         ],
         "region": "Todo el país",
         "ingredientes_principales": [
@@ -207,7 +207,7 @@
         "grupo": "Dulces",
         "tipo": [
             "Dulce para untar",
-            "base de otros postres"
+            "Base de otros postres"
         ],
         "region": "Todo el país",
         "ingredientes_principales": [
