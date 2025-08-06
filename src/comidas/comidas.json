@@ -176,10 +176,11 @@
     },
     {
         "nombre": "Pizza al molde",
-        "descripcion": "Pizza gruesa cocida en molde, con abundante queso y salsa de tomate. Variedades como fugazzeta.",
+        "descripcion": "Pizza gruesa cocida en molde, con abundante queso y salsa de tomate.",
         "grupo": "Salados",
         "tipo": [
-            "Comida rápida"
+            "Comida rápida",
+            "Pizza"
         ],
         "region": "Todo el país (especialmente Buenos Aires)",
         "ingredientes_principales": [
@@ -194,6 +195,7 @@
         "descripcion": "'Pizza' rellena con cebolla y queso, cubierta con masa y horneada. Variante de la pizza al molde.",
         "grupo": "Salados",
         "tipo": [
+            "Comida rápida",
             "Pizza"
         ],
         "region": "Todo el país (especialmente Buenos Aires)",
