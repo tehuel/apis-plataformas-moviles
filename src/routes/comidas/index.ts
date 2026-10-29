@@ -5,29 +5,37 @@ import { filterByField, sortByField, paginate, SortOrder, assertInList, searchBy
 const app = new Hono()
 
 export type ComidaDetalle = typeof comidas[0]
-export type ComidaResumen = Pick<ComidaDetalle, 'id' | 'nombre' | 'grupo' | 'tipo' | 'region'>
 
-type CampoListado = keyof ComidaResumen
+const CAMPOS_LISTADO = ['id', 'nombre', 'grupo', 'tipo', 'region'] as const
+type CampoListado = (typeof CAMPOS_LISTADO)[number]
+export type ComidaResumen = Pick<ComidaDetalle, CampoListado>
 
-const CAMPOS_LISTADO: CampoListado[] = ['id', 'nombre', 'grupo', 'tipo', 'region']
 const GRUPOS_VALIDOS = ['salados', 'dulces', 'bebidas', '']
-const CAMPOS_ORDEN_VALIDOS: CampoListado[] = ['id', 'nombre', 'grupo', 'tipo', 'region']
 const SENTIDOS_ORDEN_VALIDOS: SortOrder[] = ['asc', 'desc']
+
+// Pre-proyección del listado a nivel de módulo
+const comidasResumen: ComidaResumen[] = comidas.map(({ id, nombre, grupo, tipo, region }) => ({
+    id,
+    nombre,
+    grupo,
+    tipo,
+    region,
+}))
 
 app.get('/', async (c) => {
     try {
         // filter (en campo grupo)
         const grupo = c.req.query('grupo') || ''
         assertInList(grupo.toLowerCase(), GRUPOS_VALIDOS, 'grupo')
-        const comidas_filtradas = filterByField(comidas, 'grupo', grupo)
+        const comidas_filtradas = filterByField(comidasResumen, 'grupo', grupo)
 
         // search (unificado con los campos del listado)
         const busqueda = c.req.query('busqueda') || ''
         const comidas_buscadas = searchByTerm(comidas_filtradas, busqueda, CAMPOS_LISTADO)
 
-        // sort
+        // sort (usando CAMPOS_LISTADO como campos válidos)
         const sort = (c.req.query('ordenar_campo') as CampoListado) || 'nombre'
-        assertInList(sort, CAMPOS_ORDEN_VALIDOS, 'ordenar_campo')
+        assertInList(sort, CAMPOS_LISTADO, 'ordenar_campo')
         const order = (c.req.query('ordenar_sentido') as SortOrder) || 'asc'
         assertInList(order, SENTIDOS_ORDEN_VALIDOS, 'ordenar_sentido')
         const comidas_ordenadas = sortByField(comidas_buscadas, sort, order)
@@ -35,16 +43,7 @@ app.get('/', async (c) => {
         // paginate
         const page = parseInt(c.req.query('pagina') || '1')
         const limit = parseInt(c.req.query('limite') || '5')
-        const comidas_paginadas = paginate(comidas_ordenadas, page, limit)
-
-        // proyeccion a datos de listado
-        const data: ComidaResumen[] = comidas_paginadas.map(({ id, nombre, grupo, tipo, region }) => ({
-            id,
-            nombre,
-            grupo,
-            tipo,
-            region,
-        }))
+        const data = paginate(comidas_ordenadas, page, limit)
 
         return c.json({
             data,
