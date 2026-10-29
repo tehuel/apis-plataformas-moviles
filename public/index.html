@@ -120,13 +120,13 @@
                                     <td>string</td>
                                     <td>Texto libre</td>
                                     <td>—</td>
-                                    <td>Busca en id, nombre, grupo, tipo o región.</td>
+                                    <td>Busca en id, nombre, imagen, grupo, tipo o región.</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
                                     <td>Query</td>
                                     <td>string</td>
-                                    <td><code>id</code>, <code>nombre</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code></td>
+                                    <td><code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code></td>
                                     <td><code>nombre</code></td>
                                     <td>Campo para ordenar.</td>
                                 </tr>
@@ -176,6 +176,7 @@ console.log(respuesta.total, respuesta.data);</code></pre>
     {
       "id": "empanadas",
       "nombre": "Empanadas",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Empanada%2C_flaky_pastry_perfection.jpg",
       "grupo": "Salados",
       "tipo": [
         "Principal",
@@ -202,7 +203,7 @@ console.log(respuesta.total, respuesta.data);</code></pre>
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Obtiene la información detallada y completa de una comida por su <code>:id</code> (incluye descripción completa, ingredientes principales y etiquetas).</p>
+                    <p class="text-secondary mb-3">Obtiene la información detallada y completa de una comida por su <code>:id</code> (incluye imagen, descripción completa, ingredientes principales y etiquetas).</p>
 
                     <!-- Parámetros -->
                     <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
@@ -245,6 +246,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                             <pre class="mb-0 text-success-emphasis" id="json-comida-detalle"><code>{
   "id": "empanadas",
   "nombre": "Empanadas",
+  "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Empanada%2C_flaky_pastry_perfection.jpg",
   "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
   "grupo": "Salados",
   "tipo": [
