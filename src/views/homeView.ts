@@ -361,28 +361,28 @@ console.log(count); // 1</code></pre>
                 </div>
                 <p class="text-secondary mb-4">Ejecuta llamadas directas a los endpoints.</p>
 
-                <div class="row g-2 mb-3">
+                <form id="testerForm" class="row g-2 mb-3">
                     <div class="col-md-2">
-                        <select class="form-select font-monospace" id="testerMethod">
+                        <select class="form-select font-monospace" id="testerMethod" aria-label="Método HTTP">
                             <option value="GET">GET</option>
                             <option value="POST">POST</option>
                         </select>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" class="form-control font-monospace" id="testerPath" value="/comidas?limite=3">
+                        <input type="text" class="form-control font-monospace" id="testerPath" value="/comidas?limite=3" placeholder="/endpoint" aria-label="Ruta del endpoint" required>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary w-100" id="btnSendRequest" type="button">Enviar</button>
+                        <button class="btn btn-primary w-100" id="btnSendRequest" type="submit">Enviar</button>
                     </div>
-                </div>
+                </form>
 
                 <div class="d-flex flex-wrap gap-1 mb-3">
                     <span class="small text-secondary align-self-center me-2">Ejemplos:</span>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas">/comidas</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas?grupo=salados">/comidas?grupo=salados</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas?busqueda=carne">/comidas?busqueda=carne</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/contador/demo">GET /contador/demo</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="POST" data-path="/contador/demo">POST /contador/demo</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas">/comidas</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?grupo=salados">/comidas?grupo=salados</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?busqueda=carne">/comidas?busqueda=carne</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/contador/demo">GET /contador/demo</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="POST" data-path="/contador/demo">POST /contador/demo</button>
                 </div>
 
                 <div class="d-flex justify-content-between align-items-center mb-2">
@@ -390,7 +390,7 @@ console.log(count); // 1</code></pre>
                     <div id="testerStatus"></div>
                 </div>
                 <div class="code-block">
-                    <pre class="mb-0 font-monospace small" id="testerOutput" style="max-height: 350px;"><code>Haz clic en "Enviar" para probar una petición...</code></pre>
+                    <pre class="mb-0 font-monospace small" id="testerOutput" style="max-height: 350px;"><code>Presiona Enter o haz clic en "Enviar" para probar una petición...</code></pre>
                 </div>
             </div>
         </section>
@@ -448,29 +448,31 @@ console.log(count); // 1</code></pre>
             setTimeout(() => btn.textContent = originalText, 1500);
         });
 
-        // Ejemplos rápidos
-        document.querySelectorAll('.quick-endpoint').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.getElementById('testerMethod').value = btn.getAttribute('data-method');
-                document.getElementById('testerPath').value = btn.getAttribute('data-path');
-                document.getElementById('btnSendRequest').click();
-            });
-        });
-
-        // Probador en vivo
+        // Ejemplos rápidos y probador en vivo
+        const testerForm = document.getElementById('testerForm');
         const btnSend = document.getElementById('btnSendRequest');
         const testerMethod = document.getElementById('testerMethod');
         const testerPath = document.getElementById('testerPath');
         const testerOutput = document.getElementById('testerOutput');
         const testerStatus = document.getElementById('testerStatus');
 
-        btnSend.addEventListener('click', async () => {
+        document.querySelectorAll('.quick-endpoint').forEach(btn => {
+            btn.addEventListener('click', () => {
+                testerMethod.value = btn.getAttribute('data-method');
+                testerPath.value = btn.getAttribute('data-path');
+                testerForm.requestSubmit();
+            });
+        });
+
+        testerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             const method = testerMethod.value;
             let path = testerPath.value.trim();
             if (!path.startsWith('/')) {
                 path = '/' + path;
             }
 
+            btnSend.disabled = true;
             testerStatus.innerHTML = '<span class="badge bg-secondary">Cargando...</span>';
             testerOutput.textContent = 'Enviando petición...';
 
@@ -495,8 +497,11 @@ console.log(count); // 1</code></pre>
             } catch (err) {
                 testerStatus.innerHTML = '<span class="badge bg-danger">Error</span>';
                 testerOutput.textContent = 'No se pudo completar la solicitud: ' + err.message;
+            } finally {
+                btnSend.disabled = false;
             }
         });
+
     </script>
 </body>
 </html>`
