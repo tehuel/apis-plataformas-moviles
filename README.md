@@ -1,21 +1,19 @@
-```txt
+# APIs Plataformas Móviles
+
+API de servicios y datos de práctica para el desarrollo de aplicaciones móviles y web, construida con [Hono](https://hono.dev/) y desplegada sobre [Cloudflare Workers](https://workers.cloudflare.com/).
+
+Incluye una interfaz web interactiva en `/` con documentación y probador de endpoints en tiempo real, ofreciendo los siguientes recursos:
+
+- **/comidas**: Catálogo de comidas y bebidas tradicionales argentinas con soporte para filtros por grupo, búsqueda por texto, ordenamiento y paginación.
+- **/contador**: Contador persistente respaldado por Cloudflare KV con operaciones de lectura (`GET`) e incremento (`POST`).
+
+## Comandos básicos
+
+```bash
+# Instalar dependencias
 npm install
+
+# Iniciar servidor de desarrollo local
 npm run dev
 ```
 
-```txt
-npm run deploy
-```
-
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
