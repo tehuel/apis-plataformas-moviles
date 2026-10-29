@@ -163,8 +163,8 @@
                         <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comidas">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-comidas"><code>const res = await fetch('https://api.tehuel.com.ar/comidas?grupo=salados&limite=5');
-const { data, total, pagina, paginas } = await res.json();
-console.log(total, data);</code></pre>
+const respuesta = await res.json();
+console.log(respuesta.total, respuesta.data);</code></pre>
                         </div>
 
                         <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
@@ -257,8 +257,8 @@ console.log(total, data);</code></pre>
                         <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-get-contador">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
-const { count } = await res.json();
-console.log(count); // 0</code></pre>
+const respuesta = await res.json();
+console.log(respuesta.count); // 0</code></pre>
                         </div>
 
                         <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
@@ -315,8 +315,8 @@ console.log(count); // 0</code></pre>
                             <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
   method: 'POST'
 });
-const { count } = await res.json();
-console.log(count); // 1</code></pre>
+const respuesta = await res.json();
+console.log(respuesta.count); // 1</code></pre>
                         </div>
 
                         <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
