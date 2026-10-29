@@ -1,0 +1,487 @@
+import { html } from 'hono/html'
+
+export function renderHomeView() {
+    return html`<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIs Plataformas Móviles</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .code-block {
+            position: relative;
+            background-color: var(--bs-body-bg);
+            border: 1px solid var(--bs-border-color-translucent);
+            border-radius: 0.375rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+        .bg-body .code-block {
+            background-color: var(--bs-tertiary-bg);
+        }
+        .btn-copy {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            font-size: 0.75rem;
+            padding: 0.2rem 0.5rem;
+        }
+        .method-badge {
+            min-width: 58px;
+            text-align: center;
+            font-family: monospace;
+            font-size: 0.8rem;
+        }
+        table td, table th {
+            padding: 0.5rem 0.75rem;
+        }
+        .sticky-section-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding-top: 1rem;
+            padding-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegación (no fija) -->
+    <nav class="navbar navbar-expand-lg py-3 bg-body">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">APIs Plataformas Móviles</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-2">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#comidas">Comidas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contador">Contador</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#probador">Probar API</a></li>
+                    <li class="nav-item ms-lg-2">
+                        <button class="btn btn-outline-secondary btn-sm" id="btnThemeToggle" type="button">Tema</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Sección: Inicio / Información General -->
+        <section id="inicio" class="py-5 bg-body">
+            <div class="container">
+                <div class="sticky-section-header bg-body mb-2">
+                    <h1 class="h3 fw-bold mb-0">APIs para Plataformas Móviles</h1>
+                </div>
+                <p class="text-secondary mb-4">
+                    API de ejemplo para usar en la materia 
+                    <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-underline text-secondary-emphasis">Proyecto de Desarrollo de Software para Plataformas Móviles</a>. 
+                    Las respuestas se entregan exclusivamente en formato JSON.
+                </p>
+
+                <div class="input-group" style="max-width: 380px;">
+                    <input type="text" class="form-control font-monospace" id="baseUrlInput" value="https://api.tehuel.com.ar" readonly>
+                    <button class="btn btn-outline-secondary" type="button" id="btnCopyBaseUrl">Copiar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Comidas API -->
+        <section id="comidas" class="py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="sticky-section-header bg-body-tertiary mb-3">
+                    <h2 class="h4 fw-bold mb-0">Comidas</h2>
+                </div>
+
+                <div class="mb-5">
+                    <!-- Endpoint -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-success method-badge">GET</span>
+                        <code class="fs-6 text-body">/comidas</code>
+                    </div>
+
+                    <!-- Explicación -->
+                    <p class="text-secondary mb-3">Devuelve el listado de comidas típicas con filtros por categoría, búsqueda por texto, ordenamiento y paginación.</p>
+
+                    <!-- Parámetros -->
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr class="text-secondary">
+                                    <th>Parámetro</th>
+                                    <th>Ubicación</th>
+                                    <th>Tipo</th>
+                                    <th>Valores válidos</th>
+                                    <th>Por defecto</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>grupo</code></td>
+                                    <td>Query</td>
+                                    <td>string</td>
+                                    <td><code>salados</code>, <code>dulces</code>, <code>bebidas</code></td>
+                                    <td>—</td>
+                                    <td>Filtra por categoría.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>busqueda</code></td>
+                                    <td>Query</td>
+                                    <td>string</td>
+                                    <td>Texto libre</td>
+                                    <td>—</td>
+                                    <td>Busca en nombre, descripción, tipo, región o ingredientes.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ordenar_campo</code></td>
+                                    <td>Query</td>
+                                    <td>string</td>
+                                    <td><code>nombre</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code>, <code>descripcion</code></td>
+                                    <td><code>nombre</code></td>
+                                    <td>Campo para ordenar.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>ordenar_sentido</code></td>
+                                    <td>Query</td>
+                                    <td>string</td>
+                                    <td><code>asc</code>, <code>desc</code></td>
+                                    <td><code>asc</code></td>
+                                    <td>Sentido del ordenamiento.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>pagina</code></td>
+                                    <td>Query</td>
+                                    <td>number</td>
+                                    <td>Entero &ge; 1</td>
+                                    <td><code>1</code></td>
+                                    <td>Número de página solicitada.</td>
+                                </tr>
+                                <tr>
+                                    <td><code>limite</code></td>
+                                    <td>Query</td>
+                                    <td>number</td>
+                                    <td>Entero &ge; 1</td>
+                                    <td><code>5</code></td>
+                                    <td>Cantidad de elementos por página.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ejemplos apilados uno debajo del otro -->
+                    <div class="mb-3">
+                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <div class="code-block mb-4">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="js-comidas">Copiar</button>
+                            <pre class="mb-0 text-info-emphasis" id="js-comidas"><code>const res = await fetch('https://api.tehuel.com.ar/comidas?grupo=salados&limite=5');
+const { data, total, pagina, paginas } = await res.json();
+console.log(total, data);</code></pre>
+                        </div>
+
+                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <div class="code-block">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="json-comidas">Copiar</button>
+                            <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
+  "data": [
+    {
+      "nombre": "Empanadas",
+      "grupo": "salados",
+      "tipo": "Plato principal / Entrada",
+      "region": "Todo el país (variantes regionales)",
+      "descripcion": "Masa rellena de carne cortada a cuchillo...",
+      "ingredientes_principales": ["carne vacuna", "cebolla", "grasa", "comino"]
+    }
+  ],
+  "total": 12,
+  "pagina": 1,
+  "paginas": 3,
+  "limite": 5
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Contador API -->
+        <section id="contador" class="py-5 bg-body">
+            <div class="container">
+                <div class="sticky-section-header bg-body mb-4">
+                    <h2 class="h4 fw-bold mb-0">Contador</h2>
+                </div>
+
+                <!-- GET /contador/:nombre -->
+                <div class="mb-5 pb-5">
+                    <!-- Endpoint -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-success method-badge">GET</span>
+                        <code class="fs-6 text-body">/contador/:nombre</code>
+                    </div>
+
+                    <!-- Explicación -->
+                    <p class="text-secondary mb-3">Obtiene el valor numérico actual del contador especificado por <code>:nombre</code>. Si no existe, retorna 0.</p>
+
+                    <!-- Parámetros -->
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr class="text-secondary">
+                                    <th>Parámetro</th>
+                                    <th>Ubicación</th>
+                                    <th>Tipo</th>
+                                    <th>Requerido</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:nombre</code></td>
+                                    <td>Ruta (Path)</td>
+                                    <td>string</td>
+                                    <td>Sí</td>
+                                    <td>Identificador único del contador a consultar.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ejemplos apilados -->
+                    <div class="mb-3">
+                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <div class="code-block mb-4">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="js-get-contador">Copiar</button>
+                            <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
+const { count } = await res.json();
+console.log(count); // 0</code></pre>
+                        </div>
+
+                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <div class="code-block">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="json-get-contador">Copiar</button>
+                            <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
+  "count": 0
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- POST /contador/:nombre -->
+                <div class="mb-4">
+                    <!-- Endpoint -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-primary method-badge">POST</span>
+                        <code class="fs-6 text-body">/contador/:nombre</code>
+                    </div>
+
+                    <!-- Explicación -->
+                    <p class="text-secondary mb-3">Incrementa en 1 unidad el valor del contador especificado por <code>:nombre</code> y devuelve el nuevo total acumulado.</p>
+
+                    <!-- Parámetros -->
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr class="text-secondary">
+                                    <th>Parámetro</th>
+                                    <th>Ubicación</th>
+                                    <th>Tipo</th>
+                                    <th>Requerido</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:nombre</code></td>
+                                    <td>Ruta (Path)</td>
+                                    <td>string</td>
+                                    <td>Sí</td>
+                                    <td>Identificador único del contador a incrementar.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ejemplos apilados -->
+                    <div class="mb-3">
+                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <div class="code-block mb-4">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="js-post-contador">Copiar</button>
+                            <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
+  method: 'POST'
+});
+const { count } = await res.json();
+console.log(count); // 1</code></pre>
+                        </div>
+
+                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <div class="code-block">
+                            <button class="btn btn-outline-secondary btn-copy" data-target="json-post-contador">Copiar</button>
+                            <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
+  "count": 1
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Sección: Probar API -->
+        <section id="probador" class="py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="sticky-section-header bg-body-tertiary mb-2">
+                    <h2 class="h4 fw-bold mb-0">Probar API</h2>
+                </div>
+                <p class="text-secondary mb-4">Ejecuta llamadas directas a los endpoints.</p>
+
+                <div class="row g-2 mb-3">
+                    <div class="col-md-2">
+                        <select class="form-select font-monospace" id="testerMethod">
+                            <option value="GET">GET</option>
+                            <option value="POST">POST</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control font-monospace" id="testerPath" value="/comidas?limite=3">
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-primary w-100" id="btnSendRequest" type="button">Enviar</button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-wrap gap-1 mb-3">
+                    <span class="small text-secondary align-self-center me-2">Ejemplos:</span>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas">/comidas</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas?grupo=salados">/comidas?grupo=salados</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/comidas?busqueda=carne">/comidas?busqueda=carne</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="GET" data-path="/contador/demo">GET /contador/demo</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" data-method="POST" data-path="/contador/demo">POST /contador/demo</button>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="small text-secondary">Respuesta</span>
+                    <div id="testerStatus"></div>
+                </div>
+                <div class="code-block">
+                    <pre class="mb-0 font-monospace small" id="testerOutput" style="max-height: 350px;"><code>Haz clic en "Enviar" para probar una petición...</code></pre>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-body text-center text-secondary">
+        <div class="container">
+            <p class="mb-0">
+                <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary">
+                    Proyecto de Desarrollo de Software para Plataformas Móviles
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        // Tema claro / oscuro
+        const btnTheme = document.getElementById('btnThemeToggle');
+        btnTheme.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+            const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-bs-theme', nextTheme);
+        });
+
+        // Configurar URL Base según la ubicación actual si no es localhost
+        const baseUrlInput = document.getElementById('baseUrlInput');
+        if (window.location.host && !window.location.host.includes('localhost') && !window.location.host.includes('127.0.0.1')) {
+            baseUrlInput.value = window.location.origin;
+        }
+
+        // Copiar al portapapeles
+        document.querySelectorAll('.btn-copy').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const targetId = btn.getAttribute('data-target');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    await navigator.clipboard.writeText(targetEl.innerText);
+                    const originalText = btn.textContent;
+                    btn.textContent = 'Copiado';
+                    setTimeout(() => btn.textContent = originalText, 1500);
+                }
+            });
+        });
+
+        document.getElementById('btnCopyBaseUrl').addEventListener('click', async () => {
+            await navigator.clipboard.writeText(baseUrlInput.value);
+            const btn = document.getElementById('btnCopyBaseUrl');
+            const originalText = btn.textContent;
+            btn.textContent = 'Copiado';
+            setTimeout(() => btn.textContent = originalText, 1500);
+        });
+
+        // Ejemplos rápidos
+        document.querySelectorAll('.quick-endpoint').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.getElementById('testerMethod').value = btn.getAttribute('data-method');
+                document.getElementById('testerPath').value = btn.getAttribute('data-path');
+                document.getElementById('btnSendRequest').click();
+            });
+        });
+
+        // Probador en vivo
+        const btnSend = document.getElementById('btnSendRequest');
+        const testerMethod = document.getElementById('testerMethod');
+        const testerPath = document.getElementById('testerPath');
+        const testerOutput = document.getElementById('testerOutput');
+        const testerStatus = document.getElementById('testerStatus');
+
+        btnSend.addEventListener('click', async () => {
+            const method = testerMethod.value;
+            let path = testerPath.value.trim();
+            if (!path.startsWith('/')) {
+                path = '/' + path;
+            }
+
+            testerStatus.innerHTML = '<span class="badge bg-secondary">Cargando...</span>';
+            testerOutput.textContent = 'Enviando petición...';
+
+            const startTime = performance.now();
+            try {
+                const response = await fetch(path, { method });
+                const duration = Math.round(performance.now() - startTime);
+                const statusBadge = response.ok 
+                    ? \`<span class="badge bg-success">\${response.status} \${response.statusText || 'OK'}</span>\`
+                    : \`<span class="badge bg-danger">\${response.status} \${response.statusText || 'Error'}</span>\`;
+                const timeBadge = \`<span class="badge bg-secondary-subtle text-secondary-emphasis">\${duration} ms</span>\`;
+                testerStatus.innerHTML = statusBadge + ' ' + timeBadge;
+
+                const contentType = response.headers.get('content-type') || '';
+                if (contentType.includes('application/json')) {
+                    const data = await response.json();
+                    testerOutput.textContent = JSON.stringify(data, null, 2);
+                } else {
+                    const text = await response.text();
+                    testerOutput.textContent = text;
+                }
+            } catch (err) {
+                testerStatus.innerHTML = '<span class="badge bg-danger">Error</span>';
+                testerOutput.textContent = 'No se pudo completar la solicitud: ' + err.message;
+            }
+        });
+    </script>
+</body>
+</html>`
+}

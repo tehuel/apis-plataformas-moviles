@@ -6,25 +6,6 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>()
 
-app.get('/', (c) => {
-    return c.json({
-        'título': 'API Contador',
-        'descripción': 'Una API para contar',
-        endpoints: [
-            { 
-                'método': 'GET', 
-                ruta: '/contador/:nombre',
-                'descripción': 'Obtiene el valor actual del contador :nombre',
-            },
-            { 
-                'método': 'POST', 
-                ruta: '/contador/:nombre',
-                'descripción': 'Incrementa y obtiene el valor actual del contador :nombre',
-            },
-        ],
-    })
-})
-
 app.get('/:name', async (c) => {
     const name = c.req.param('name')
     const current = parseInt(await c.env.COUNTER_KV.get(name) || '0')
