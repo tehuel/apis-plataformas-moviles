@@ -1,7 +1,4 @@
-import { html } from 'hono/html'
-
-export function renderHomeView() {
-    return html`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
@@ -481,9 +478,9 @@ console.log(count); // 1</code></pre>
                 const response = await fetch(path, { method });
                 const duration = Math.round(performance.now() - startTime);
                 const statusBadge = response.ok 
-                    ? \`<span class="badge bg-success">\${response.status} \${response.statusText || 'OK'}</span>\`
-                    : \`<span class="badge bg-danger">\${response.status} \${response.statusText || 'Error'}</span>\`;
-                const timeBadge = \`<span class="badge bg-secondary-subtle text-secondary-emphasis">\${duration} ms</span>\`;
+                    ? `<span class="badge bg-success">${response.status} ${response.statusText || 'OK'}</span>`
+                    : `<span class="badge bg-danger">${response.status} ${response.statusText || 'Error'}</span>`;
+                const timeBadge = `<span class="badge bg-secondary-subtle text-secondary-emphasis">${duration} ms</span>`;
                 testerStatus.innerHTML = statusBadge + ' ' + timeBadge;
 
                 const contentType = response.headers.get('content-type') || '';
@@ -522,5 +519,4 @@ console.log(count); // 1</code></pre>
         })();
     </script>
 </body>
-</html>`
-}
+</html>
