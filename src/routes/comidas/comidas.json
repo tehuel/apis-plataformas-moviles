@@ -8,7 +8,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "carne vacuna",
             "sal",
@@ -26,7 +26,7 @@
             "Principal",
             "Entrada"
         ],
-        "region": "Noroeste, Cuyo, Tucumán",
+        "region": "NOA, Cuyo, Centro",
         "ingredientes_principales": [
             "harina",
             "carne vacuna",
@@ -44,7 +44,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "carne vacuna",
             "pollo",
@@ -63,7 +63,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Noroeste y fechas patrias",
+        "region": "NOA, Centro",
         "ingredientes_principales": [
             "maíz blanco",
             "zapallo",
@@ -82,7 +82,7 @@
             "Comida callejera",
             "Entrada"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "chorizo",
             "pan",
@@ -98,7 +98,7 @@
         "tipo": [
             "Entrada"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "queso provolone",
             "orégano",
@@ -115,7 +115,7 @@
             "Principal",
             "Vegetariano"
         ],
-        "region": "Noroeste",
+        "region": "NOA",
         "ingredientes_principales": [
             "maíz",
             "cebolla",
@@ -132,7 +132,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Noroeste",
+        "region": "NOA",
         "ingredientes_principales": [
             "maíz",
             "carne vacuna",
@@ -151,7 +151,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Centro y norte",
+        "region": "Centro, NOA",
         "ingredientes_principales": [
             "matambre",
             "salsa de tomate",
@@ -168,7 +168,7 @@
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "carne vacuna con hueso",
             "papas",
@@ -187,7 +187,7 @@
             "Comida fría",
             "Merienda"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "pan de miga",
             "jamón",
@@ -206,7 +206,7 @@
             "Comida rápida",
             "Pizza"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Centro, Nacional",
         "ingredientes_principales": [
             "masa de pizza",
             "salsa de tomate",
@@ -224,7 +224,7 @@
             "Comida rápida",
             "Pizza"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Centro, Nacional",
         "ingredientes_principales": [
             "masa de pizza",
             "cebolla",
@@ -241,7 +241,7 @@
             "Dulce para untar",
             "Base de otros postres"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "leche",
             "azúcar",
@@ -257,7 +257,7 @@
         "tipo": [
             "Galletita rellena"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "harina",
             "dulce de leche",
@@ -276,7 +276,7 @@
         "tipo": [
             "Torta fría"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "galletitas de chocolate",
             "dulce de leche",
@@ -293,7 +293,7 @@
         "tipo": [
             "Postre helado"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Nacional",
         "ingredientes_principales": [
             "leche",
             "azúcar",
@@ -311,7 +311,7 @@
         "tipo": [
             "Postre caliente"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "harina",
             "leche",
@@ -331,7 +331,7 @@
         "tipo": [
             "Postre simple"
         ],
-        "region": "Todo el país (popular en cantinas)",
+        "region": "Nacional",
         "ingredientes_principales": [
             "queso",
             "dulce de membrillo",
@@ -347,7 +347,7 @@
         "tipo": [
             "Torta de capas"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "harina",
             "yema de huevo",
@@ -364,7 +364,7 @@
         "tipo": [
             "Postre de aprovechamiento"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "pan",
             "leche",
@@ -382,7 +382,7 @@
         "tipo": [
             "Tarta dulce"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "harina",
             "manteca",
@@ -402,7 +402,7 @@
         "tipo": [
             "Infusión"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "yerba mate",
             "agua caliente"
@@ -417,7 +417,7 @@
         "tipo": [
             "Cóctel"
         ],
-        "region": "Todo el país, con fuerte arraigo en Córdoba",
+        "region": "Centro, Nacional",
         "ingredientes_principales": [
             "fernet",
             "gaseosa cola",
@@ -433,7 +433,7 @@
         "tipo": [
             "Vino"
         ],
-        "region": "Principalmente Mendoza y otras regiones vitivinícolas",
+        "region": "Cuyo",
         "ingredientes_principales": [
             "uva Malbec"
         ]
@@ -447,7 +447,7 @@
         "tipo": [
             "Aperitivo"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "hierbas",
             "alcohol",
@@ -463,7 +463,7 @@
         "tipo": [
             "Infusión tradicional"
         ],
-        "region": "Noroeste y regiones rurales",
+        "region": "Litoral, NOA",
         "ingredientes_principales": [
             "caña",
             "hojas de ruda"
@@ -478,7 +478,7 @@
         "tipo": [
             "Bebida caliente"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
         "ingredientes_principales": [
             "café",
             "leche"
