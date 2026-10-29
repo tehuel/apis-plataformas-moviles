@@ -20,7 +20,7 @@ app.get('/', async (c) => {
         // search
         const busqueda = c.req.query('busqueda') || ''
         const comidas_buscadas = searchByTerm(comidas_filtradas, busqueda, [
-            'id', 'nombre', 'alias', 'descripcion', 'tipo', 'region', 'ingredientes_principales'
+            'id', 'nombre', 'alias', 'descripcion', 'tipo', 'region', 'etiquetas', 'ingredientes_principales'
         ])
 
         // sort
