@@ -23,13 +23,13 @@ export function paginate<T>(data: T[], page: number, limit: number) {
     return data.slice(start, start + limit);
 }
 
-export function assertInList<T extends string>(value: string, validList: T[], paramName: string) {
+export function assertInList<T extends string>(value: string, validList: readonly T[] | T[], paramName: string) {
     if (!validList.includes(value as T)) {
         throw new Error(`El valor "${value}" no es válido para el parámetro "${paramName}". Valores válidos: ${JSON.stringify(validList)}.`);
     }
 }
 
-export function searchByTerm<T>(data: T[], term: string, fields: (keyof T)[]): T[] {
+export function searchByTerm<T>(data: T[], term: string, fields: readonly (keyof T)[] | (keyof T)[]): T[] {
     if (!term) return data;
     const lowerTerm = term.toLowerCase();
     return data.filter(item =>

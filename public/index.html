@@ -80,7 +80,8 @@
                     <h2 class="h4 fw-bold mb-0">Comidas</h2>
                 </div>
 
-                <div class="mb-5">
+                <!-- GET /comidas (Listado) -->
+                <div class="mb-5 pb-4 border-bottom">
                     <!-- Endpoint -->
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <span class="badge bg-success font-monospace">GET</span>
@@ -88,7 +89,7 @@
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Devuelve el listado de comidas típicas con filtros por categoría, búsqueda por texto, ordenamiento y paginación.</p>
+                    <p class="text-secondary mb-3">Devuelve el listado resumido de comidas típicas con filtros por categoría, búsqueda por texto, ordenamiento y paginación. Los campos devueltos corresponden exactamente a los campos evaluados en la búsqueda y el ordenamiento.</p>
 
                     <!-- Parámetros -->
                     <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
@@ -119,13 +120,13 @@
                                     <td>string</td>
                                     <td>Texto libre</td>
                                     <td>—</td>
-                                    <td>Busca en id, nombre, descripción, tipo, región, etiquetas o ingredientes.</td>
+                                    <td>Busca en id, nombre, imagen, grupo, tipo o región.</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
                                     <td>Query</td>
                                     <td>string</td>
-                                    <td><code>id</code>, <code>nombre</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code>, <code>descripcion</code></td>
+                                    <td><code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code></td>
                                     <td><code>nombre</code></td>
                                     <td>Campo para ordenar.</td>
                                 </tr>
@@ -175,32 +176,97 @@ console.log(respuesta.total, respuesta.data);</code></pre>
     {
       "id": "empanadas",
       "nombre": "Empanadas",
-      "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Empanada%2C_flaky_pastry_perfection.jpg",
       "grupo": "Salados",
       "tipo": [
         "Principal",
         "Entrada"
       ],
-      "region": "NOA, Cuyo, Centro",
-      "etiquetas": [
-        "tradicional",
-        "horno",
-        "frito",
-        "para-compartir"
-      ],
-      "ingredientes_principales": [
-        "harina",
-        "carne vacuna",
-        "cebolla",
-        "huevo",
-        "comino"
-      ]
+      "region": "NOA, Cuyo, Centro"
     }
   ],
   "total": 17,
   "pagina": 1,
   "paginas": 4,
   "limite": 5
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GET /comidas/:id (Detalle) -->
+                <div class="mb-4">
+                    <!-- Endpoint -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-success font-monospace">GET</span>
+                        <code class="fs-6 text-body">/comidas/:id</code>
+                    </div>
+
+                    <!-- Explicación -->
+                    <p class="text-secondary mb-3">Obtiene la información detallada y completa de una comida por su <code>:id</code> (incluye imagen, descripción completa, ingredientes principales y etiquetas).</p>
+
+                    <!-- Parámetros -->
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <div class="table-responsive mb-4">
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr class="text-secondary">
+                                    <th>Parámetro</th>
+                                    <th>Ubicación</th>
+                                    <th>Tipo</th>
+                                    <th>Requerido</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>:id</code></td>
+                                    <td>Ruta (Path)</td>
+                                    <td>string</td>
+                                    <td>Sí</td>
+                                    <td>Identificador único del elemento (ej: <code>asado</code>, <code>empanadas</code>, <code>mate</code>).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Ejemplos apilados -->
+                    <div class="mb-3">
+                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
+                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comida-detalle">Copiar</button>
+                            <pre class="mb-0 text-info-emphasis" id="js-comida-detalle"><code>const res = await fetch('https://api.tehuel.com.ar/comidas/empanadas');
+const comida = await res.json();
+console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
+                        </div>
+
+                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-detalle">Copiar</button>
+                            <pre class="mb-0 text-success-emphasis" id="json-comida-detalle"><code>{
+  "id": "empanadas",
+  "nombre": "Empanadas",
+  "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Empanada%2C_flaky_pastry_perfection.jpg",
+  "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
+  "grupo": "Salados",
+  "tipo": [
+    "Principal",
+    "Entrada"
+  ],
+  "region": "NOA, Cuyo, Centro",
+  "etiquetas": [
+    "tradicional",
+    "horno",
+    "frito",
+    "para-compartir"
+  ],
+  "ingredientes_principales": [
+    "harina",
+    "carne vacuna",
+    "cebolla",
+    "huevo",
+    "comino"
+  ]
 }</code></pre>
                         </div>
                     </div>
@@ -359,7 +425,8 @@ console.log(respuesta.count); // 1</code></pre>
                     <span class="small text-secondary align-self-center me-2">Ejemplos:</span>
                     <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas">/comidas</button>
                     <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?grupo=salados">/comidas?grupo=salados</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?busqueda=carne">/comidas?busqueda=carne</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?busqueda=salados">/comidas?busqueda=salados</button>
+                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas/empanadas">/comidas/empanadas</button>
                     <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/contador/demo">GET /contador/demo</button>
                     <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="POST" data-path="/contador/demo">POST /contador/demo</button>
                 </div>
