@@ -308,6 +308,115 @@
         ]
     },
     {
+        "id": "bife-de-chorizo",
+        "nombre": "Bife de chorizo",
+        "alias": [
+            "Ojo de bife",
+            "Bife angosto"
+        ],
+        "descripcion": "Corte grueso y tierno de carne vacuna cocido a la parrilla, emblemático de los asados y las parrillas argentinas.",
+        "grupo": "Salados",
+        "tipo": [
+            "Principal"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "parrilla",
+            "sin-tacc",
+            "clasico",
+            "icono-argentino"
+        ],
+        "ingredientes_principales": [
+            "carne vacuna",
+            "sal gruesa"
+        ]
+    },
+    {
+        "id": "matambre-arrollado",
+        "nombre": "Matambre arrollado",
+        "alias": [
+            "Matambre relleno"
+        ],
+        "descripcion": "Corte de carne vacuna arrollado con huevo duro, verduras y especias, hervido y prensado. Se consume tradicionalmente frío en rodajas.",
+        "grupo": "Salados",
+        "tipo": [
+            "Entrada",
+            "Principal"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "comida-fria",
+            "fiestas",
+            "bodegon",
+            "tradicional",
+            "sin-tacc"
+        ],
+        "ingredientes_principales": [
+            "matambre vacuno",
+            "huevo duro",
+            "zanahoria",
+            "morrón",
+            "especias"
+        ]
+    },
+    {
+        "id": "chipa",
+        "nombre": "Chipá",
+        "alias": [
+            "Chipa",
+            "Chipacitos"
+        ],
+        "descripcion": "Pancitos horneados elaborados con almidón de mandioca y queso, crujientes por fuera y elásticos por dentro.",
+        "grupo": "Salados",
+        "tipo": [
+            "Entrada",
+            "Acompañamiento",
+            "Merienda"
+        ],
+        "region": "Litoral, Nacional",
+        "etiquetas": [
+            "sin-tacc",
+            "vegetariano",
+            "merienda",
+            "desayuno",
+            "tradicional",
+            "caliente"
+        ],
+        "ingredientes_principales": [
+            "almidón de mandioca",
+            "queso",
+            "huevos",
+            "leche",
+            "manteca"
+        ]
+    },
+    {
+        "id": "tortas-fritas",
+        "nombre": "Tortas fritas",
+        "alias": [
+            "Torta frita"
+        ],
+        "descripcion": "Masa redonda a base de harina y grasa frita en grasa o aceite, tradicional compañera del mate en los días de lluvia.",
+        "grupo": "Salados",
+        "tipo": [
+            "Merienda"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "dias-de-lluvia",
+            "merienda",
+            "tradicional",
+            "frito",
+            "comida-callejera"
+        ],
+        "ingredientes_principales": [
+            "harina",
+            "grasa vacuna",
+            "agua",
+            "sal"
+        ]
+    },
+    {
         "id": "dulce-de-leche",
         "nombre": "Dulce de leche",
         "alias": [],
@@ -533,6 +642,63 @@
         ]
     },
     {
+        "id": "flan-mixto",
+        "nombre": "Flan mixto",
+        "alias": [
+            "Flan casero",
+            "Flan con dulce de leche y crema"
+        ],
+        "descripcion": "Clásico postre casero y de bodegón horneado a baño maría con caramelo, servido con dulce de leche y crema chantilly.",
+        "grupo": "Dulces",
+        "tipo": [
+            "Postre"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "bodegon",
+            "clasico",
+            "vegetariano",
+            "sin-tacc",
+            "dulce"
+        ],
+        "ingredientes_principales": [
+            "huevos",
+            "leche",
+            "azúcar",
+            "dulce de leche",
+            "crema de leche"
+        ]
+    },
+    {
+        "id": "medialunas",
+        "nombre": "Medialunas",
+        "alias": [
+            "Medialunas de manteca",
+            "Medialunas de grasa"
+        ],
+        "descripcion": "Facturas de masa hojaldrada en forma de medialuna, dulces o saladas, pieza fundamental del desayuno y la merienda.",
+        "grupo": "Dulces",
+        "tipo": [
+            "Merienda"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "desayuno",
+            "merienda",
+            "panaderia",
+            "vegetariano",
+            "clasico"
+        ],
+        "ingredientes_principales": [
+            "harina",
+            "manteca",
+            "grasa",
+            "leche",
+            "azúcar",
+            "levadura"
+        ]
+    },
+    {
         "id": "mate",
         "nombre": "Mate",
         "alias": [],
@@ -662,6 +828,33 @@
         "ingredientes_principales": [
             "café",
             "leche"
+        ]
+    },
+    {
+        "id": "terere",
+        "nombre": "Tereré",
+        "alias": [],
+        "descripcion": "Bebida tradicional fría preparada con yerba mate y agua helada o jugo cítrico con hierbas, típica del Litoral para los días calurosos.",
+        "grupo": "Bebidas",
+        "tipo": [
+            "Bebida"
+        ],
+        "region": "Litoral, Nacional",
+        "etiquetas": [
+            "infusion",
+            "frio",
+            "vegano",
+            "vegetariano",
+            "sin-tacc",
+            "verano",
+            "para-compartir"
+        ],
+        "ingredientes_principales": [
+            "yerba mate",
+            "agua helada",
+            "hielo",
+            "jugo cítrico",
+            "hierbas refrescantes"
         ]
     }
 ]
