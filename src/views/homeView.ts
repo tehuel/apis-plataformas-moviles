@@ -78,15 +78,9 @@ export function renderHomeView() {
                     Las respuestas se entregan exclusivamente en formato JSON.
                 </p>
 
-                <div class="row">
-                    <div class="col-md-6 col-lg-5">
-                        <label for="baseUrlInput" class="small text-secondary fw-semibold d-block mb-1">URL Base</label>
-                        <div class="input-group">
-                            <span class="input-group-text bg-body-tertiary font-monospace text-secondary">https://</span>
-                            <input type="text" class="form-control font-monospace" id="baseUrlInput" value="api.tehuel.com.ar" readonly>
-                            <button class="btn btn-outline-secondary" type="button" id="btnCopyBaseUrl">Copiar</button>
-                        </div>
-                    </div>
+                <div class="input-group" style="max-width: 380px;">
+                    <input type="text" class="form-control font-monospace" id="baseUrlInput" value="https://api.tehuel.com.ar" readonly>
+                    <button class="btn btn-outline-secondary" type="button" id="btnCopyBaseUrl">Copiar</button>
                 </div>
             </div>
         </section>
@@ -398,7 +392,7 @@ console.log(count); // 1</code></pre>
         // Configurar URL Base según la ubicación actual si no es localhost
         const baseUrlInput = document.getElementById('baseUrlInput');
         if (window.location.host && !window.location.host.includes('localhost') && !window.location.host.includes('127.0.0.1')) {
-            baseUrlInput.value = window.location.host;
+            baseUrlInput.value = window.location.origin;
         }
 
         // Copiar al portapapeles
@@ -416,7 +410,7 @@ console.log(count); // 1</code></pre>
         });
 
         document.getElementById('btnCopyBaseUrl').addEventListener('click', async () => {
-            await navigator.clipboard.writeText('https://' + baseUrlInput.value);
+            await navigator.clipboard.writeText(baseUrlInput.value);
             const btn = document.getElementById('btnCopyBaseUrl');
             const originalText = btn.textContent;
             btn.textContent = 'Copiado';
