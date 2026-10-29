@@ -1,12 +1,19 @@
 [
     {
+        "id": "asado",
         "nombre": "Asado",
         "descripcion": "Carne vacuna cocida a la parrilla o al asador. Es el plato más representativo de la cultura argentina.",
         "grupo": "Salados",
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "parrilla",
+            "tradicional",
+            "para-compartir",
+            "sin-tacc"
+        ],
         "ingredientes_principales": [
             "carne vacuna",
             "sal",
@@ -15,6 +22,7 @@
         ]
     },
     {
+        "id": "empanadas",
         "nombre": "Empanadas",
         "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
         "grupo": "Salados",
@@ -22,7 +30,13 @@
             "Principal",
             "Entrada"
         ],
-        "region": "Noroeste, Cuyo, Tucumán",
+        "region": "NOA, Cuyo, Centro",
+        "etiquetas": [
+            "tradicional",
+            "horno",
+            "frito",
+            "para-compartir"
+        ],
         "ingredientes_principales": [
             "harina",
             "carne vacuna",
@@ -32,13 +46,19 @@
         ]
     },
     {
+        "id": "milanesa",
         "nombre": "Milanesa",
         "descripcion": "Carne empanada y frita. Se sirve sola o como 'milanesa a la napolitana' con salsa y queso.",
         "grupo": "Salados",
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "clasico",
+            "bodegon",
+            "familiar"
+        ],
         "ingredientes_principales": [
             "carne vacuna",
             "pollo",
@@ -49,13 +69,22 @@
         ]
     },
     {
+        "id": "locro",
         "nombre": "Locro",
         "descripcion": "Guiso espeso a base de maíz, zapallo, porotos y carne. Se consume especialmente el 25 de mayo y el 9 de julio.",
         "grupo": "Salados",
         "tipo": [
             "Principal"
         ],
-        "region": "Noroeste y fechas patrias",
+        "region": "NOA, Centro",
+        "etiquetas": [
+            "fechas-patrias",
+            "invierno",
+            "plato-de-olla",
+            "tradicional",
+            "caliente",
+            "sin-tacc"
+        ],
         "ingredientes_principales": [
             "maíz blanco",
             "zapallo",
@@ -65,14 +94,20 @@
         ]
     },
     {
+        "id": "choripan",
         "nombre": "Choripán",
         "descripcion": "Chorizo a la parrilla servido en pan tipo francés, comúnmente acompañado con chimichurri.",
         "grupo": "Salados",
         "tipo": [
-            "Comida callejera",
-            "Entrada"
+            "Entrada",
+            "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "comida-callejera",
+            "parrilla",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "chorizo",
             "pan",
@@ -80,13 +115,21 @@
         ]
     },
     {
+        "id": "provoleta",
         "nombre": "Provoleta",
         "descripcion": "Queso provolone a la parrilla con orégano y ají molido, típico acompañamiento del asado.",
         "grupo": "Salados",
         "tipo": [
-            "Entrada"
+            "Entrada",
+            "Acompañamiento"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "parrilla",
+            "vegetariano",
+            "sin-tacc",
+            "caliente"
+        ],
         "ingredientes_principales": [
             "queso provolone",
             "orégano",
@@ -94,14 +137,21 @@
         ]
     },
     {
+        "id": "humita-en-chala",
         "nombre": "Humita en chala",
         "descripcion": "Preparación de maíz rallado cocido con queso, envuelta en hojas de choclo (chala).",
         "grupo": "Salados",
         "tipo": [
             "Principal",
-            "Vegetariano"
+            "Entrada"
         ],
-        "region": "Noroeste",
+        "region": "NOA",
+        "etiquetas": [
+            "vegetariano",
+            "sin-tacc",
+            "tradicional",
+            "regional"
+        ],
         "ingredientes_principales": [
             "maíz",
             "cebolla",
@@ -110,13 +160,20 @@
         ]
     },
     {
+        "id": "tamales",
         "nombre": "Tamales",
         "descripcion": "Masa de maíz cocida al vapor, rellena de carne y envuelta en hojas de maíz.",
         "grupo": "Salados",
         "tipo": [
-            "Principal"
+            "Principal",
+            "Entrada"
         ],
-        "region": "Noroeste",
+        "region": "NOA",
+        "etiquetas": [
+            "tradicional",
+            "sin-tacc",
+            "regional"
+        ],
         "ingredientes_principales": [
             "maíz",
             "carne vacuna",
@@ -127,13 +184,19 @@
         ]
     },
     {
+        "id": "matambre-a-la-pizza",
         "nombre": "Matambre a la pizza",
         "descripcion": "Carne de matambre cocida al horno o parrilla con salsa de tomate, queso y orégano encima.",
         "grupo": "Salados",
         "tipo": [
             "Principal"
         ],
-        "region": "Centro y norte",
+        "region": "Centro, NOA",
+        "etiquetas": [
+            "parrilla",
+            "bodegon",
+            "sin-tacc"
+        ],
         "ingredientes_principales": [
             "matambre",
             "salsa de tomate",
@@ -142,13 +205,21 @@
         ]
     },
     {
+        "id": "puchero",
         "nombre": "Puchero",
         "descripcion": "Guiso de carne, verduras y legumbres cocidas en agua. Muy consumido en invierno.",
         "grupo": "Salados",
         "tipo": [
             "Principal"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "invierno",
+            "plato-de-olla",
+            "tradicional",
+            "caliente",
+            "familiar"
+        ],
         "ingredientes_principales": [
             "carne vacuna con hueso",
             "papas",
@@ -158,14 +229,21 @@
         ]
     },
     {
+        "id": "sandwich-de-miga",
         "nombre": "Sándwich de miga",
         "descripcion": "Sándwiches de pan de miga rellenos con fiambres, ensaladas o vegetales. Muy populares en reuniones.",
         "grupo": "Salados",
         "tipo": [
-            "Comida fría",
-            "Merienda"
+            "Merienda",
+            "Entrada"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "comida-fria",
+            "cumpleanos",
+            "para-compartir",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "pan de miga",
             "jamón",
@@ -175,14 +253,19 @@
         ]
     },
     {
+        "id": "pizza-al-molde",
         "nombre": "Pizza al molde",
         "descripcion": "Pizza gruesa cocida en molde, con abundante queso y salsa de tomate.",
         "grupo": "Salados",
         "tipo": [
-            "Comida rápida",
-            "Pizza"
+            "Principal"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Centro, Nacional",
+        "etiquetas": [
+            "pizzeria",
+            "para-compartir",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "masa de pizza",
             "salsa de tomate",
@@ -191,14 +274,20 @@
         ]
     },
     {
+        "id": "fugazzeta",
         "nombre": "Fugazzeta",
         "descripcion": "'Pizza' rellena con cebolla y queso, cubierta con masa y horneada. Variante de la pizza al molde.",
         "grupo": "Salados",
         "tipo": [
-            "Comida rápida",
-            "Pizza"
+            "Principal"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Centro, Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "pizzeria",
+            "para-compartir",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "masa de pizza",
             "cebolla",
@@ -206,14 +295,118 @@
         ]
     },
     {
+        "id": "bife-de-chorizo",
+        "nombre": "Bife de chorizo",
+        "descripcion": "Corte grueso y tierno de carne vacuna cocido a la parrilla, emblemático de los asados y las parrillas argentinas.",
+        "grupo": "Salados",
+        "tipo": [
+            "Principal"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "parrilla",
+            "sin-tacc",
+            "clasico",
+            "icono-argentino"
+        ],
+        "ingredientes_principales": [
+            "carne vacuna",
+            "sal gruesa"
+        ]
+    },
+    {
+        "id": "matambre-arrollado",
+        "nombre": "Matambre arrollado",
+        "descripcion": "Corte de carne vacuna arrollado (también conocido como matambre relleno) con huevo duro, verduras y especias, hervido y prensado. Se consume tradicionalmente frío en rodajas.",
+        "grupo": "Salados",
+        "tipo": [
+            "Entrada",
+            "Principal"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "comida-fria",
+            "fiestas",
+            "bodegon",
+            "tradicional",
+            "sin-tacc"
+        ],
+        "ingredientes_principales": [
+            "matambre vacuno",
+            "huevo duro",
+            "zanahoria",
+            "morrón",
+            "especias"
+        ]
+    },
+    {
+        "id": "chipa",
+        "nombre": "Chipá",
+        "descripcion": "Pancitos horneados elaborados con almidón de mandioca y queso, crujientes por fuera y elásticos por dentro.",
+        "grupo": "Salados",
+        "tipo": [
+            "Entrada",
+            "Acompañamiento",
+            "Merienda"
+        ],
+        "region": "Litoral, Nacional",
+        "etiquetas": [
+            "sin-tacc",
+            "vegetariano",
+            "merienda",
+            "desayuno",
+            "tradicional",
+            "caliente"
+        ],
+        "ingredientes_principales": [
+            "almidón de mandioca",
+            "queso",
+            "huevos",
+            "leche",
+            "manteca"
+        ]
+    },
+    {
+        "id": "tortas-fritas",
+        "nombre": "Tortas fritas",
+        "descripcion": "Masa redonda a base de harina y grasa frita en grasa o aceite, tradicional compañera del mate en los días de lluvia.",
+        "grupo": "Salados",
+        "tipo": [
+            "Merienda"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "dias-de-lluvia",
+            "merienda",
+            "tradicional",
+            "frito",
+            "comida-callejera"
+        ],
+        "ingredientes_principales": [
+            "harina",
+            "grasa vacuna",
+            "agua",
+            "sal"
+        ]
+    },
+    {
+        "id": "dulce-de-leche",
         "nombre": "Dulce de leche",
         "descripcion": "Icono nacional. Leche cocida lentamente con azúcar hasta caramelizarse. Se usa solo o como ingrediente.",
         "grupo": "Dulces",
         "tipo": [
-            "Dulce para untar",
-            "Base de otros postres"
+            "Postre",
+            "Dulce para untar"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "sin-tacc",
+            "dulce",
+            "icono-argentino",
+            "desayuno",
+            "merienda"
+        ],
         "ingredientes_principales": [
             "leche",
             "azúcar",
@@ -221,13 +414,22 @@
         ]
     },
     {
+        "id": "alfajores",
         "nombre": "Alfajores",
         "descripcion": "Galletas unidas con dulce de leche y cubiertas con chocolate o azúcar impalpable. Variantes regionales.",
         "grupo": "Dulces",
         "tipo": [
-            "Galletita rellena"
+            "Merienda",
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "dulce",
+            "golosina",
+            "clasico",
+            "merienda"
+        ],
         "ingredientes_principales": [
             "harina",
             "dulce de leche",
@@ -238,13 +440,21 @@
         ]
     },
     {
+        "id": "chocotorta",
         "nombre": "Chocotorta",
         "descripcion": "Postre sin cocción hecho con galletitas de chocolate mojadas en café y capas de dulce de leche con queso crema.",
         "grupo": "Dulces",
         "tipo": [
-            "Torta fría"
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "dulce",
+            "frio",
+            "cumpleanos",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "galletitas de chocolate",
             "dulce de leche",
@@ -253,13 +463,20 @@
         ]
     },
     {
+        "id": "helado-artesanal",
         "nombre": "Helado artesanal",
         "descripcion": "Helado estilo italiano con sabores clásicos como dulce de leche, sambayón, frutilla y chocolate.",
         "grupo": "Dulces",
         "tipo": [
-            "Postre helado"
+            "Postre"
         ],
-        "region": "Todo el país (especialmente Buenos Aires)",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "frio",
+            "dulce",
+            "artesanal"
+        ],
         "ingredientes_principales": [
             "leche",
             "azúcar",
@@ -269,13 +486,20 @@
         ]
     },
     {
+        "id": "panqueques-con-dulce-de-leche",
         "nombre": "Panqueques con dulce de leche",
         "descripcion": "Panqueques finos rellenos con dulce de leche, a veces flambeados con licor.",
         "grupo": "Dulces",
         "tipo": [
-            "Postre caliente"
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "dulce",
+            "bodegon",
+            "caliente"
+        ],
         "ingredientes_principales": [
             "harina",
             "leche",
@@ -284,13 +508,22 @@
         ]
     },
     {
+        "id": "vigilante",
         "nombre": "Vigilante",
-        "descripcion": "Dulce de membrillo o batata servido con queso (tipo Mar del Plata, fresco o cuartirolo).",
+        "descripcion": "Dulce de membrillo o batata servido con queso (tipo Mar del Plata, fresco o cuartirolo). También conocido como Postre Martín Fierro o queso y dulce.",
         "grupo": "Dulces",
         "tipo": [
-            "Postre simple"
+            "Postre"
         ],
-        "region": "Todo el país (popular en cantinas)",
+        "region": "Nacional",
+        "etiquetas": [
+            "cantinas",
+            "bodegon",
+            "vegetariano",
+            "sin-tacc",
+            "dulce",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "queso",
             "dulce de membrillo",
@@ -298,13 +531,20 @@
         ]
     },
     {
+        "id": "torta-rogel",
         "nombre": "Torta Rogel",
         "descripcion": "Torta de varias capas finas de masa crocante rellenas con dulce de leche y cubierta de merengue italiano.",
         "grupo": "Dulces",
         "tipo": [
-            "Torta de capas"
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "dulce",
+            "cumpleanos",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "harina",
             "yema de huevo",
@@ -313,27 +553,21 @@
         ]
     },
     {
-        "nombre": "Queso y dulce (Postre criollo)",
-        "descripcion": "También conocido como 'Postre Martín Fierro'. Queso fresco con dulce de batata o membrillo.",
-        "grupo": "Dulces",
-        "tipo": [
-            "Postre simple"
-        ],
-        "region": "Todo el país",
-        "ingredientes_principales": [
-            "queso fresco",
-            "dulce de batata",
-            "dulce de membrillo"
-        ]
-    },
-    {
+        "id": "budin-de-pan",
         "nombre": "Budín de pan",
         "descripcion": "Hecho con pan viejo, leche, azúcar, huevos y opcionalmente frutas secas. Muy típico en hogares.",
         "grupo": "Dulces",
         "tipo": [
-            "Postre de aprovechamiento"
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "bodegon",
+            "dulce",
+            "casero",
+            "aprovechamiento"
+        ],
         "ingredientes_principales": [
             "pan",
             "leche",
@@ -343,13 +577,21 @@
         ]
     },
     {
+        "id": "pastafrola",
         "nombre": "Pastafrola",
         "descripcion": "Tarta con base de masa quebrada y relleno de dulce (membrillo, batata, dulce de leche), cubierta con tiras de masa enrejadas.",
         "grupo": "Dulces",
         "tipo": [
-            "Tarta dulce"
+            "Merienda",
+            "Postre"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "dulce",
+            "merienda",
+            "clasico"
+        ],
         "ingredientes_principales": [
             "harina",
             "manteca",
@@ -361,26 +603,93 @@
         ]
     },
     {
+        "id": "flan-mixto",
+        "nombre": "Flan mixto",
+        "descripcion": "Clásico postre casero y de bodegón horneado a baño maría con caramelo, servido con dulce de leche y crema chantilly.",
+        "grupo": "Dulces",
+        "tipo": [
+            "Postre"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "bodegon",
+            "clasico",
+            "vegetariano",
+            "sin-tacc",
+            "dulce"
+        ],
+        "ingredientes_principales": [
+            "huevos",
+            "leche",
+            "azúcar",
+            "dulce de leche",
+            "crema de leche"
+        ]
+    },
+    {
+        "id": "medialunas",
+        "nombre": "Medialunas",
+        "descripcion": "Facturas de masa hojaldrada en forma de medialuna, dulces o saladas, pieza fundamental del desayuno y la merienda.",
+        "grupo": "Dulces",
+        "tipo": [
+            "Merienda"
+        ],
+        "region": "Nacional",
+        "etiquetas": [
+            "desayuno",
+            "merienda",
+            "panaderia",
+            "vegetariano",
+            "clasico"
+        ],
+        "ingredientes_principales": [
+            "harina",
+            "manteca",
+            "grasa",
+            "leche",
+            "azúcar",
+            "levadura"
+        ]
+    },
+    {
+        "id": "mate",
         "nombre": "Mate",
         "descripcion": "Bebida tradicional hecha con hojas de yerba mate, que se consume en todo el país.",
         "grupo": "Bebidas",
         "tipo": [
-            "Infusión"
+            "Bebida"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "infusion",
+            "caliente",
+            "vegano",
+            "vegetariano",
+            "sin-tacc",
+            "icono-argentino",
+            "para-compartir"
+        ],
         "ingredientes_principales": [
             "yerba mate",
             "agua caliente"
         ]
     },
     {
+        "id": "fernet-con-coca",
         "nombre": "Fernet con Coca",
         "descripcion": "Mezcla de Fernet, un licor amargo de hierbas, con gaseosa cola. Muy popular especialmente en Córdoba.",
         "grupo": "Bebidas",
         "tipo": [
-            "Cóctel"
+            "Bebida"
         ],
-        "region": "Todo el país, con fuerte arraigo en Córdoba",
+        "region": "Centro, Nacional",
+        "etiquetas": [
+            "alcoholico",
+            "trago",
+            "nocturno",
+            "para-compartir",
+            "frio"
+        ],
         "ingredientes_principales": [
             "fernet",
             "gaseosa cola",
@@ -388,25 +697,39 @@
         ]
     },
     {
+        "id": "vino-malbec",
         "nombre": "Vino Malbec",
         "descripcion": "Vino tinto emblemático de Argentina, producido principalmente en Mendoza.",
         "grupo": "Bebidas",
         "tipo": [
-            "Vino"
+            "Bebida"
         ],
-        "region": "Principalmente Mendoza y otras regiones vitivinícolas",
+        "region": "Cuyo",
+        "etiquetas": [
+            "alcoholico",
+            "vino",
+            "icono-argentino",
+            "sin-tacc"
+        ],
         "ingredientes_principales": [
             "uva Malbec"
         ]
     },
     {
+        "id": "gancia",
         "nombre": "Gancia",
         "descripcion": "Bebida alcohólica aromatizada con hierbas, consumida como aperitivo.",
         "grupo": "Bebidas",
         "tipo": [
-            "Aperitivo"
+            "Bebida"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "alcoholico",
+            "aperitivo",
+            "trago",
+            "frio"
+        ],
         "ingredientes_principales": [
             "hierbas",
             "alcohol",
@@ -414,29 +737,70 @@
         ]
     },
     {
+        "id": "cana-con-ruda",
         "nombre": "Caña con ruda",
         "descripcion": "Bebida típica para el 1° de agosto, hecha con caña (aguardiente) y hojas de ruda.",
         "grupo": "Bebidas",
         "tipo": [
-            "Infusión tradicional"
+            "Bebida"
         ],
-        "region": "Noroeste y regiones rurales",
+        "region": "Litoral, NOA",
+        "etiquetas": [
+            "alcoholico",
+            "tradicional",
+            "fechas-patrias",
+            "ritual"
+        ],
         "ingredientes_principales": [
             "caña",
             "hojas de ruda"
         ]
     },
     {
+        "id": "cafe-con-leche",
         "nombre": "Café con leche",
         "descripcion": "Clásico desayuno argentino, café espresso mezclado con leche caliente.",
         "grupo": "Bebidas",
         "tipo": [
-            "Bebida caliente"
+            "Bebida"
         ],
-        "region": "Todo el país",
+        "region": "Nacional",
+        "etiquetas": [
+            "vegetariano",
+            "sin-tacc",
+            "desayuno",
+            "merienda",
+            "caliente"
+        ],
         "ingredientes_principales": [
             "café",
             "leche"
+        ]
+    },
+    {
+        "id": "terere",
+        "nombre": "Tereré",
+        "descripcion": "Bebida tradicional fría preparada con yerba mate y agua helada o jugo cítrico con hierbas, típica del Litoral para los días calurosos.",
+        "grupo": "Bebidas",
+        "tipo": [
+            "Bebida"
+        ],
+        "region": "Litoral, Nacional",
+        "etiquetas": [
+            "infusion",
+            "frio",
+            "vegano",
+            "vegetariano",
+            "sin-tacc",
+            "verano",
+            "para-compartir"
+        ],
+        "ingredientes_principales": [
+            "yerba mate",
+            "agua helada",
+            "hielo",
+            "jugo cítrico",
+            "hierbas refrescantes"
         ]
     }
 ]

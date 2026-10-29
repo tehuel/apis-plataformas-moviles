@@ -7,7 +7,7 @@ const app = new Hono()
 type SortField = keyof typeof comidas[0]
 
 const GRUPOS_VALIDOS = ['salados', 'dulces', 'bebidas', '']
-const CAMPOS_ORDEN_VALIDOS: SortField[] = ['nombre', 'grupo', 'tipo', 'region', 'descripcion']
+const CAMPOS_ORDEN_VALIDOS: SortField[] = ['id', 'nombre', 'grupo', 'tipo', 'region', 'descripcion']
 const SENTIDOS_ORDEN_VALIDOS: SortOrder[] = ['asc', 'desc']
 
 app.get('/', async (c) => {
@@ -20,7 +20,7 @@ app.get('/', async (c) => {
         // search
         const busqueda = c.req.query('busqueda') || ''
         const comidas_buscadas = searchByTerm(comidas_filtradas, busqueda, [
-            'nombre', 'descripcion', 'tipo', 'region', 'ingredientes_principales'
+            'id', 'nombre', 'descripcion', 'tipo', 'region', 'etiquetas', 'ingredientes_principales'
         ])
 
         // sort
