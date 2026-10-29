@@ -140,13 +140,13 @@ export function renderHomeView() {
                                     <td>string</td>
                                     <td>Texto libre</td>
                                     <td>—</td>
-                                    <td>Busca en nombre, descripción, tipo, región o ingredientes.</td>
+                                    <td>Busca en id, nombre, alias, descripción, tipo, región, etiquetas o ingredientes.</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
                                     <td>Query</td>
                                     <td>string</td>
-                                    <td><code>nombre</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code>, <code>descripcion</code></td>
+                                    <td><code>id</code>, <code>nombre</code>, <code>grupo</code>, <code>tipo</code>, <code>region</code>, <code>descripcion</code></td>
                                     <td><code>nombre</code></td>
                                     <td>Campo para ordenar.</td>
                                 </tr>
@@ -194,17 +194,34 @@ console.log(total, data);</code></pre>
                             <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
   "data": [
     {
+      "id": "empanadas",
       "nombre": "Empanadas",
-      "grupo": "salados",
-      "tipo": "Plato principal / Entrada",
-      "region": "Todo el país (variantes regionales)",
-      "descripcion": "Masa rellena de carne cortada a cuchillo...",
-      "ingredientes_principales": ["carne vacuna", "cebolla", "grasa", "comino"]
+      "alias": [],
+      "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
+      "grupo": "Salados",
+      "tipo": [
+        "Principal",
+        "Entrada"
+      ],
+      "region": "NOA, Cuyo, Centro",
+      "etiquetas": [
+        "tradicional",
+        "horno",
+        "frito",
+        "para-compartir"
+      ],
+      "ingredientes_principales": [
+        "harina",
+        "carne vacuna",
+        "cebolla",
+        "huevo",
+        "comino"
+      ]
     }
   ],
-  "total": 12,
+  "total": 17,
   "pagina": 1,
-  "paginas": 3,
+  "paginas": 4,
   "limite": 5
 }</code></pre>
                         </div>
