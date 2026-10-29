@@ -3,6 +3,9 @@
   "name": "apis-plataformas-moviles",
   "main": "src/index.ts",
   "compatibility_date": "2025-05-22",
+  "assets": {
+    "directory": "./public"
+  },
   "kv_namespaces": [
     {
       "binding": "COUNTER_KV",
