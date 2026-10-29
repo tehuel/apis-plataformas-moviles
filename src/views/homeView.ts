@@ -398,13 +398,13 @@ console.log(count); // 1</code></pre>
     </main>
 
     <!-- Footer -->
-    <footer class="py-4 bg-body text-center text-secondary">
+    <footer class="py-4 text-center text-secondary small">
         <div class="container">
-            <p class="mb-0">
-                <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary">
-                    Proyecto de Desarrollo de Software para Plataformas Móviles
-                </a>
-            </p>
+            <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-none text-secondary">
+                Proyecto de Desarrollo de Software para Plataformas Móviles
+            </a>
+            <span class="mx-2">&bull;</span>
+            <span>Visitas: <span id="contadorVisitas">—</span></span>
         </div>
     </footer>
 
@@ -502,6 +502,24 @@ console.log(count); // 1</code></pre>
             }
         });
 
+        // Contador de visitas
+        (async () => {
+            const contadorEl = document.getElementById('contadorVisitas');
+            if (!contadorEl) return;
+            try {
+                const response = await fetch('/contador/visitas-api-plataformas-moviles', {
+                    method: 'POST'
+                });
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data && typeof data.count === 'number') {
+                        contadorEl.textContent = data.count.toLocaleString();
+                    }
+                }
+            } catch (err) {
+                console.error('Error al actualizar contador de visitas:', err);
+            }
+        })();
     </script>
 </body>
 </html>`
