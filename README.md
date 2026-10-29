@@ -5,7 +5,7 @@ API de servicios y datos de práctica para el desarrollo de aplicaciones móvile
 Incluye una interfaz web interactiva en `/` con documentación y probador de endpoints en tiempo real, ofreciendo los siguientes recursos:
 
 - **/comidas**: Catálogo de comidas y bebidas tradicionales argentinas.
-  - `GET /comidas`: Listado resumido (`id`, `nombre`, `imagen`, `grupo`, `tipo`, `region`) con filtros por grupo, búsqueda por texto unificada, ordenamiento y paginación.
+  - `GET /comidas`: Listado resumido (`id`, `nombre`, `imagen`, `grupo`, `tipo`) con filtros por grupo, búsqueda por texto unificada, ordenamiento y paginación.
   - `GET /comidas/:id`: Detalle completo del plato consultado (incluyendo imagen, descripción, ingredientes principales y etiquetas).
 - **/contador**: Contador persistente respaldado por Cloudflare KV con operaciones de lectura (`GET`) e incremento (`POST`).
 

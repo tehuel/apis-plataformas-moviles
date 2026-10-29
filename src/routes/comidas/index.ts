@@ -6,7 +6,7 @@ const app = new Hono()
 
 export type ComidaDetalle = typeof comidas[0]
 
-const CAMPOS_LISTADO = ['id', 'nombre', 'imagen', 'grupo', 'tipo', 'region'] as const
+const CAMPOS_LISTADO = ['id', 'nombre', 'imagen', 'grupo', 'tipo'] as const
 type CampoListado = (typeof CAMPOS_LISTADO)[number]
 export type ComidaResumen = Pick<ComidaDetalle, CampoListado>
 
@@ -14,13 +14,12 @@ const GRUPOS_VALIDOS = ['salados', 'dulces', 'bebidas', '']
 const SENTIDOS_ORDEN_VALIDOS: SortOrder[] = ['asc', 'desc']
 
 // Pre-proyección del listado a nivel de módulo
-const comidasResumen: ComidaResumen[] = comidas.map(({ id, nombre, imagen, grupo, tipo, region }) => ({
+const comidasResumen: ComidaResumen[] = comidas.map(({ id, nombre, imagen, grupo, tipo }) => ({
     id,
     nombre,
     imagen,
     grupo,
     tipo,
-    region,
 }))
 
 app.get('/', async (c) => {
