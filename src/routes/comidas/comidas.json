@@ -2,6 +2,7 @@
     {
         "id": "asado",
         "nombre": "Asado",
+        "alias": [],
         "descripcion": "Carne vacuna cocida a la parrilla o al asador. Es el plato más representativo de la cultura argentina.",
         "grupo": "Salados",
         "tipo": [
@@ -18,6 +19,7 @@
     {
         "id": "empanadas",
         "nombre": "Empanadas",
+        "alias": [],
         "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
         "grupo": "Salados",
         "tipo": [
@@ -36,6 +38,7 @@
     {
         "id": "milanesa",
         "nombre": "Milanesa",
+        "alias": [],
         "descripcion": "Carne empanada y frita. Se sirve sola o como 'milanesa a la napolitana' con salsa y queso.",
         "grupo": "Salados",
         "tipo": [
@@ -54,6 +57,7 @@
     {
         "id": "locro",
         "nombre": "Locro",
+        "alias": [],
         "descripcion": "Guiso espeso a base de maíz, zapallo, porotos y carne. Se consume especialmente el 25 de mayo y el 9 de julio.",
         "grupo": "Salados",
         "tipo": [
@@ -71,6 +75,7 @@
     {
         "id": "choripan",
         "nombre": "Choripán",
+        "alias": [],
         "descripcion": "Chorizo a la parrilla servido en pan tipo francés, comúnmente acompañado con chimichurri.",
         "grupo": "Salados",
         "tipo": [
@@ -87,6 +92,7 @@
     {
         "id": "provoleta",
         "nombre": "Provoleta",
+        "alias": [],
         "descripcion": "Queso provolone a la parrilla con orégano y ají molido, típico acompañamiento del asado.",
         "grupo": "Salados",
         "tipo": [
@@ -102,6 +108,7 @@
     {
         "id": "humita-en-chala",
         "nombre": "Humita en chala",
+        "alias": [],
         "descripcion": "Preparación de maíz rallado cocido con queso, envuelta en hojas de choclo (chala).",
         "grupo": "Salados",
         "tipo": [
@@ -119,6 +126,7 @@
     {
         "id": "tamales",
         "nombre": "Tamales",
+        "alias": [],
         "descripcion": "Masa de maíz cocida al vapor, rellena de carne y envuelta en hojas de maíz.",
         "grupo": "Salados",
         "tipo": [
@@ -137,6 +145,7 @@
     {
         "id": "matambre-a-la-pizza",
         "nombre": "Matambre a la pizza",
+        "alias": [],
         "descripcion": "Carne de matambre cocida al horno o parrilla con salsa de tomate, queso y orégano encima.",
         "grupo": "Salados",
         "tipo": [
@@ -153,6 +162,7 @@
     {
         "id": "puchero",
         "nombre": "Puchero",
+        "alias": [],
         "descripcion": "Guiso de carne, verduras y legumbres cocidas en agua. Muy consumido en invierno.",
         "grupo": "Salados",
         "tipo": [
@@ -170,6 +180,7 @@
     {
         "id": "sandwich-de-miga",
         "nombre": "Sándwich de miga",
+        "alias": [],
         "descripcion": "Sándwiches de pan de miga rellenos con fiambres, ensaladas o vegetales. Muy populares en reuniones.",
         "grupo": "Salados",
         "tipo": [
@@ -188,6 +199,7 @@
     {
         "id": "pizza-al-molde",
         "nombre": "Pizza al molde",
+        "alias": [],
         "descripcion": "Pizza gruesa cocida en molde, con abundante queso y salsa de tomate.",
         "grupo": "Salados",
         "tipo": [
@@ -205,6 +217,7 @@
     {
         "id": "fugazzeta",
         "nombre": "Fugazzeta",
+        "alias": [],
         "descripcion": "'Pizza' rellena con cebolla y queso, cubierta con masa y horneada. Variante de la pizza al molde.",
         "grupo": "Salados",
         "tipo": [
@@ -221,6 +234,7 @@
     {
         "id": "dulce-de-leche",
         "nombre": "Dulce de leche",
+        "alias": [],
         "descripcion": "Icono nacional. Leche cocida lentamente con azúcar hasta caramelizarse. Se usa solo o como ingrediente.",
         "grupo": "Dulces",
         "tipo": [
@@ -237,6 +251,7 @@
     {
         "id": "alfajores",
         "nombre": "Alfajores",
+        "alias": [],
         "descripcion": "Galletas unidas con dulce de leche y cubiertas con chocolate o azúcar impalpable. Variantes regionales.",
         "grupo": "Dulces",
         "tipo": [
@@ -255,6 +270,7 @@
     {
         "id": "chocotorta",
         "nombre": "Chocotorta",
+        "alias": [],
         "descripcion": "Postre sin cocción hecho con galletitas de chocolate mojadas en café y capas de dulce de leche con queso crema.",
         "grupo": "Dulces",
         "tipo": [
@@ -271,6 +287,7 @@
     {
         "id": "helado-artesanal",
         "nombre": "Helado artesanal",
+        "alias": [],
         "descripcion": "Helado estilo italiano con sabores clásicos como dulce de leche, sambayón, frutilla y chocolate.",
         "grupo": "Dulces",
         "tipo": [
@@ -288,6 +305,7 @@
     {
         "id": "panqueques-con-dulce-de-leche",
         "nombre": "Panqueques con dulce de leche",
+        "alias": [],
         "descripcion": "Panqueques finos rellenos con dulce de leche, a veces flambeados con licor.",
         "grupo": "Dulces",
         "tipo": [
@@ -304,7 +322,11 @@
     {
         "id": "vigilante",
         "nombre": "Vigilante",
-        "descripcion": "Dulce de membrillo o batata servido con queso (tipo Mar del Plata, fresco o cuartirolo).",
+        "alias": [
+            "Postre Martín Fierro",
+            "Queso y dulce"
+        ],
+        "descripcion": "Dulce de membrillo o batata servido con queso (tipo Mar del Plata, fresco o cuartirolo). También conocido como Postre Martín Fierro o queso y dulce.",
         "grupo": "Dulces",
         "tipo": [
             "Postre simple"
@@ -319,6 +341,7 @@
     {
         "id": "torta-rogel",
         "nombre": "Torta Rogel",
+        "alias": [],
         "descripcion": "Torta de varias capas finas de masa crocante rellenas con dulce de leche y cubierta de merengue italiano.",
         "grupo": "Dulces",
         "tipo": [
@@ -333,23 +356,9 @@
         ]
     },
     {
-        "id": "queso-y-dulce",
-        "nombre": "Queso y dulce (Postre criollo)",
-        "descripcion": "También conocido como 'Postre Martín Fierro'. Queso fresco con dulce de batata o membrillo.",
-        "grupo": "Dulces",
-        "tipo": [
-            "Postre simple"
-        ],
-        "region": "Todo el país",
-        "ingredientes_principales": [
-            "queso fresco",
-            "dulce de batata",
-            "dulce de membrillo"
-        ]
-    },
-    {
         "id": "budin-de-pan",
         "nombre": "Budín de pan",
+        "alias": [],
         "descripcion": "Hecho con pan viejo, leche, azúcar, huevos y opcionalmente frutas secas. Muy típico en hogares.",
         "grupo": "Dulces",
         "tipo": [
@@ -367,6 +376,7 @@
     {
         "id": "pastafrola",
         "nombre": "Pastafrola",
+        "alias": [],
         "descripcion": "Tarta con base de masa quebrada y relleno de dulce (membrillo, batata, dulce de leche), cubierta con tiras de masa enrejadas.",
         "grupo": "Dulces",
         "tipo": [
@@ -386,6 +396,7 @@
     {
         "id": "mate",
         "nombre": "Mate",
+        "alias": [],
         "descripcion": "Bebida tradicional hecha con hojas de yerba mate, que se consume en todo el país.",
         "grupo": "Bebidas",
         "tipo": [
@@ -400,6 +411,7 @@
     {
         "id": "fernet-con-coca",
         "nombre": "Fernet con Coca",
+        "alias": [],
         "descripcion": "Mezcla de Fernet, un licor amargo de hierbas, con gaseosa cola. Muy popular especialmente en Córdoba.",
         "grupo": "Bebidas",
         "tipo": [
@@ -415,6 +427,7 @@
     {
         "id": "vino-malbec",
         "nombre": "Vino Malbec",
+        "alias": [],
         "descripcion": "Vino tinto emblemático de Argentina, producido principalmente en Mendoza.",
         "grupo": "Bebidas",
         "tipo": [
@@ -428,6 +441,7 @@
     {
         "id": "gancia",
         "nombre": "Gancia",
+        "alias": [],
         "descripcion": "Bebida alcohólica aromatizada con hierbas, consumida como aperitivo.",
         "grupo": "Bebidas",
         "tipo": [
@@ -443,6 +457,7 @@
     {
         "id": "cana-con-ruda",
         "nombre": "Caña con ruda",
+        "alias": [],
         "descripcion": "Bebida típica para el 1° de agosto, hecha con caña (aguardiente) y hojas de ruda.",
         "grupo": "Bebidas",
         "tipo": [
@@ -457,6 +472,7 @@
     {
         "id": "cafe-con-leche",
         "nombre": "Café con leche",
+        "alias": [],
         "descripcion": "Clásico desayuno argentino, café espresso mezclado con leche caliente.",
         "grupo": "Bebidas",
         "tipo": [
