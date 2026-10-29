@@ -140,7 +140,7 @@ export function renderHomeView() {
                                     <td>string</td>
                                     <td>Texto libre</td>
                                     <td>—</td>
-                                    <td>Busca en id, nombre, alias, descripción, tipo, región, etiquetas o ingredientes.</td>
+                                    <td>Busca en id, nombre, descripción, tipo, región, etiquetas o ingredientes.</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
@@ -196,7 +196,6 @@ console.log(total, data);</code></pre>
     {
       "id": "empanadas",
       "nombre": "Empanadas",
-      "alias": [],
       "descripcion": "Masa rellena, tradicionalmente con carne picada, cebolla, huevo y especias. Cada provincia tiene su variante.",
       "grupo": "Salados",
       "tipo": [
