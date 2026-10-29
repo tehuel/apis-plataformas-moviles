@@ -41,12 +41,19 @@ export function renderHomeView() {
         table td, table th {
             padding: 0.5rem 0.75rem;
         }
+        .sticky-section-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding-top: 1rem;
+            padding-bottom: 0.75rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg py-3 bg-body sticky-top">
+    <!-- Navegación (no fija) -->
+    <nav class="navbar navbar-expand-lg py-3 bg-body">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#inicio">APIs Plataformas Móviles</a>
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Navegación">
@@ -71,7 +78,9 @@ export function renderHomeView() {
         <!-- Sección: Inicio / Información General -->
         <section id="inicio" class="py-5 bg-body">
             <div class="container">
-                <h1 class="h3 fw-bold mb-2">APIs para Plataformas Móviles</h1>
+                <div class="sticky-section-header bg-body mb-2">
+                    <h1 class="h3 fw-bold mb-0">APIs para Plataformas Móviles</h1>
+                </div>
                 <p class="text-secondary mb-4">
                     API de ejemplo para usar en la materia 
                     <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-underline text-secondary-emphasis">Proyecto de Desarrollo de Software para Plataformas Móviles</a>. 
@@ -88,7 +97,9 @@ export function renderHomeView() {
         <!-- Sección: Comidas API -->
         <section id="comidas" class="py-5 bg-body-tertiary">
             <div class="container">
-                <h2 class="h4 fw-bold mb-4">Comidas</h2>
+                <div class="sticky-section-header bg-body-tertiary mb-3">
+                    <h2 class="h4 fw-bold mb-0">Comidas</h2>
+                </div>
 
                 <div class="mb-5">
                     <!-- Endpoint -->
@@ -205,7 +216,9 @@ console.log(total, data);</code></pre>
         <!-- Sección: Contador API -->
         <section id="contador" class="py-5 bg-body">
             <div class="container">
-                <h2 class="h4 fw-bold mb-5">Contador</h2>
+                <div class="sticky-section-header bg-body mb-4">
+                    <h2 class="h4 fw-bold mb-0">Contador</h2>
+                </div>
 
                 <!-- GET /contador/:nombre -->
                 <div class="mb-5 pb-5">
@@ -327,7 +340,9 @@ console.log(count); // 1</code></pre>
         <!-- Sección: Probar API -->
         <section id="probador" class="py-5 bg-body-tertiary">
             <div class="container">
-                <h2 class="h4 fw-bold mb-2">Probar API</h2>
+                <div class="sticky-section-header bg-body-tertiary mb-2">
+                    <h2 class="h4 fw-bold mb-0">Probar API</h2>
+                </div>
                 <p class="text-secondary mb-4">Ejecuta llamadas directas a los endpoints.</p>
 
                 <div class="row g-2 mb-3">
