@@ -154,10 +154,11 @@ const respuesta = await res.json();
 console.log(respuesta.total, respuesta.data);</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
-                        <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas">Copiar</button>
-                            <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas">Copiar</button>
+                                <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
   "data": [
     {
       "id": "empanadas",
@@ -175,7 +176,18 @@ console.log(respuesta.total, respuesta.data);</code></pre>
   "paginas": 4,
   "limite": 5
 }</code></pre>
-                        </div>
+                            </div>
+                        </details>
+
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold text-danger-emphasis mb-2" style="cursor: pointer;">Respuesta de error (400 Bad Request)</summary>
+                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas-error">Copiar</button>
+                                <pre class="mb-0 text-danger-emphasis" id="json-comidas-error"><code>{
+  "error": "El valor \"invalido\" no es válido para el parámetro \"grupo\". Valores válidos: [\"salados\",\"dulces\",\"bebidas\",\"\"]."
+}</code></pre>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
@@ -221,10 +233,11 @@ const comida = await res.json();
 console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
-                        <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-detalle">Copiar</button>
-                            <pre class="mb-0 text-success-emphasis" id="json-comida-detalle"><code>{
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-detalle">Copiar</button>
+                                <pre class="mb-0 text-success-emphasis" id="json-comida-detalle"><code>{
   "id": "empanadas",
   "nombre": "Empanadas",
   "imagen": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Empanada%2C_flaky_pastry_perfection.jpg",
@@ -249,7 +262,18 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
     "comino"
   ]
 }</code></pre>
-                        </div>
+                            </div>
+                        </details>
+
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold text-danger-emphasis mb-2" style="cursor: pointer;">Respuesta de error (404 Not Found)</summary>
+                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-error">Copiar</button>
+                                <pre class="mb-0 text-danger-emphasis" id="json-comida-error"><code>{
+  "error": "Comida con id 'pizza' no encontrada"
+}</code></pre>
+                            </div>
+                        </details>
                     </div>
                 </div>
             </div>
@@ -304,13 +328,15 @@ const respuesta = await res.json();
 console.log(respuesta.count); // 0</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
-                        <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
-                            <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                            <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
+                                <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
   "count": 0
 }</code></pre>
-                        </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
@@ -358,13 +384,15 @@ const respuesta = await res.json();
 console.log(respuesta.count); // 1</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
-                        <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
-                            <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
+                        <details class="mb-3">
+                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                            <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
+                                <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
   "count": 1
 }</code></pre>
-                        </div>
+                            </div>
+                        </details>
                     </div>
                 </div>
 
