@@ -57,7 +57,7 @@
         <!-- Sección: Inicio / Información General -->
         <section id="inicio" class="py-5 bg-body">
             <div class="container">
-                <div class="sticky-top bg-body pt-3 pb-2 mb-2">
+                <div class="sticky-top bg-body py-2 mb-2">
                     <h1 class="h3 fw-bold mb-0">Documentación de la API</h1>
                 </div>
                 <p class="text-secondary mb-4">
@@ -74,9 +74,9 @@
         </section>
 
         <!-- Sección: Comidas API -->
-        <section id="comidas" class="py-5 bg-body-tertiary">
+        <section id="comidas" class="py-5 bg-body-secondary">
             <div class="container">
-                <div class="sticky-top bg-body-tertiary pt-3 pb-2 mb-3">
+                <div class="sticky-top bg-body-secondary py-2 mb-3">
                     <h2 class="h4 fw-bold mb-0">Comidas</h2>
                 </div>
 
@@ -282,7 +282,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
         <!-- Sección: Contador API -->
         <section id="contador" class="py-5 bg-body">
             <div class="container">
-                <div class="sticky-top bg-body pt-3 pb-2 mb-4">
+                <div class="sticky-top bg-body py-2 mb-4">
                     <h2 class="h4 fw-bold mb-0">Contador</h2>
                 </div>
 
@@ -321,7 +321,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                     <!-- Ejemplos apilados -->
                     <div class="mb-3">
                         <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
-                        <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto mb-4">
+                        <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-get-contador">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
 const respuesta = await res.json();
@@ -330,7 +330,7 @@ console.log(respuesta.count); // 0</code></pre>
 
                         <details class="mb-3">
                             <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
-                            <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
+                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
                                 <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
                                 <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
   "count": 0
@@ -375,7 +375,7 @@ console.log(respuesta.count); // 0</code></pre>
                     <!-- Ejemplos apilados -->
                     <div class="mb-3">
                         <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
-                        <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto mb-4">
+                        <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-post-contador">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
   method: 'POST'
@@ -386,7 +386,7 @@ console.log(respuesta.count); // 1</code></pre>
 
                         <details class="mb-3">
                             <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
-                            <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
+                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
                                 <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
                                 <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
   "count": 1
@@ -400,9 +400,9 @@ console.log(respuesta.count); // 1</code></pre>
         </section>
 
         <!-- Sección: Probar API -->
-        <section id="probador" class="py-5 bg-body-tertiary">
+        <section id="probador" class="py-5 bg-body-secondary">
             <div class="container">
-                <div class="sticky-top bg-body-tertiary pt-3 pb-2 mb-2">
+                <div class="sticky-top bg-body-secondary py-2 mb-2">
                     <h2 class="h4 fw-bold mb-0">Probar API</h2>
                 </div>
                 <p class="text-secondary mb-4">Ejecuta llamadas directas a los endpoints.</p>
