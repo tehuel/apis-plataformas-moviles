@@ -80,85 +80,86 @@
                     <h2 class="h4 fw-bold mb-0">Comidas</h2>
                 </div>
 
-                <!-- GET /comidas (Listado) -->
-                <div class="mb-5 pb-4 border-bottom">
-                    <!-- Endpoint -->
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <span class="badge bg-success font-monospace">GET</span>
-                        <code class="fs-6 text-body">/comidas</code>
-                    </div>
-
-                    <!-- Explicación -->
-                    <p class="text-secondary mb-3">Devuelve el listado de comidas típicas (en formato resumido) con filtros por categoría, búsqueda por texto, ordenamiento y paginación.</p>
-
-                    <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en query</h3>
-                    <div class="table-responsive mb-4">
-                        <table class="table table-sm align-middle">
-                            <thead>
-                                <tr class="text-secondary">
-                                    <th>Parámetro</th>
-                                    <th>Tipo</th>
-                                    <th>Por defecto</th>
-                                    <th>Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>grupo</code></td>
-                                    <td>string</td>
-                                    <td>—</td>
-                                    <td>Filtra por categoría (<code>salados</code>, <code>dulces</code>, <code>bebidas</code>).</td>
-                                </tr>
-                                <tr>
-                                    <td><code>busqueda</code></td>
-                                    <td>string</td>
-                                    <td>—</td>
-                                    <td>Búsqueda por texto en id, nombre, imagen, grupo o tipo.</td>
-                                </tr>
-                                <tr>
-                                    <td><code>ordenar_campo</code></td>
-                                    <td>string</td>
-                                    <td><code>nombre</code></td>
-                                    <td>Campo para ordenar (<code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code>).</td>
-                                </tr>
-                                <tr>
-                                    <td><code>ordenar_sentido</code></td>
-                                    <td>string</td>
-                                    <td><code>asc</code></td>
-                                    <td>Sentido del ordenamiento (<code>asc</code>, <code>desc</code>).</td>
-                                </tr>
-                                <tr>
-                                    <td><code>pagina</code></td>
-                                    <td>number</td>
-                                    <td><code>1</code></td>
-                                    <td>Número de página solicitada (entero &ge; 1).</td>
-                                </tr>
-                                <tr>
-                                    <td><code>limite</code></td>
-                                    <td>number</td>
-                                    <td><code>5</code></td>
-                                    <td>Cantidad de elementos por página (entero &ge; 1).</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Ejemplos apilados uno debajo del otro -->
-                    <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
-                        <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comidas">Copiar</button>
-                            <pre class="mb-0 text-info-emphasis" id="js-comidas"><code>const res = await fetch('https://api.tehuel.com.ar/comidas?grupo=salados&limite=5');
-const respuesta = await res.json();
-console.log(respuesta.total, respuesta.data);</code></pre>
+                <div class="d-flex flex-column gap-5">
+                    <!-- GET /comidas (Listado) -->
+                    <div>
+                        <!-- Endpoint -->
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-success font-monospace">GET</span>
+                            <code class="fs-6 text-body">/comidas</code>
                         </div>
 
-                        <details class="mb-3">
-                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
-                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
-                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas">Copiar</button>
-                                <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
+                        <!-- Explicación -->
+                        <p class="text-secondary mb-3">Devuelve el listado de comidas típicas (en formato resumido) con filtros por categoría, búsqueda por texto, ordenamiento y paginación.</p>
+
+                        <!-- Parámetros -->
+                        <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en query</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr class="text-secondary">
+                                        <th>Parámetro</th>
+                                        <th>Tipo</th>
+                                        <th>Por defecto</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>grupo</code></td>
+                                        <td>string</td>
+                                        <td>—</td>
+                                        <td>Filtra por categoría (<code>salados</code>, <code>dulces</code>, <code>bebidas</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>busqueda</code></td>
+                                        <td>string</td>
+                                        <td>—</td>
+                                        <td>Búsqueda por texto en id, nombre, imagen, grupo o tipo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ordenar_campo</code></td>
+                                        <td>string</td>
+                                        <td><code>nombre</code></td>
+                                        <td>Campo para ordenar (<code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>ordenar_sentido</code></td>
+                                        <td>string</td>
+                                        <td><code>asc</code></td>
+                                        <td>Sentido del ordenamiento (<code>asc</code>, <code>desc</code>).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>pagina</code></td>
+                                        <td>number</td>
+                                        <td><code>1</code></td>
+                                        <td>Número de página solicitada (entero &ge; 1).</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>limite</code></td>
+                                        <td>number</td>
+                                        <td><code>5</code></td>
+                                        <td>Cantidad de elementos por página (entero &ge; 1).</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Ejemplos apilados -->
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
+                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comidas">Copiar</button>
+                                <pre class="mb-0 text-info-emphasis" id="js-comidas"><code>const res = await fetch('https://api.tehuel.com.ar/comidas?grupo=salados&limite=5');
+const respuesta = await res.json();
+console.log(respuesta.total, respuesta.data);</code></pre>
+                            </div>
+
+                            <details class="mb-3">
+                                <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                                <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                    <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas">Copiar</button>
+                                    <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
   "data": [
     {
       "id": "empanadas",
@@ -176,23 +177,23 @@ console.log(respuesta.total, respuesta.data);</code></pre>
   "paginas": 4,
   "limite": 5
 }</code></pre>
-                            </div>
-                        </details>
+                                </div>
+                            </details>
 
-                        <details class="mb-3">
-                            <summary class="h6 fw-bold text-danger-emphasis mb-2" style="cursor: pointer;">Respuesta de error (400 Bad Request)</summary>
-                            <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
-                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas-error">Copiar</button>
-                                <pre class="mb-0 text-danger-emphasis" id="json-comidas-error"><code>{
+                            <details class="mb-3">
+                                <summary class="h6 fw-bold text-danger-emphasis mb-2" style="cursor: pointer;">Respuesta de error (400 Bad Request)</summary>
+                                <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
+                                    <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas-error">Copiar</button>
+                                    <pre class="mb-0 text-danger-emphasis" id="json-comidas-error"><code>{
   "error": "El valor \"invalido\" no es válido para el parámetro \"grupo\". Valores válidos: [\"salados\",\"dulces\",\"bebidas\",\"\"]."
 }</code></pre>
-                            </div>
-                        </details>
+                                </div>
+                            </details>
+                        </div>
                     </div>
-                </div>
 
                 <!-- GET /comidas/:id (Detalle) -->
-                <div class="mb-4">
+                <div>
                     <!-- Endpoint -->
                     <div class="d-flex align-items-center gap-2 mb-2">
                         <span class="badge bg-success font-monospace">GET</span>
@@ -265,7 +266,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                             </div>
                         </details>
 
-                        <details class="mb-3">
+                        <details>
                             <summary class="h6 fw-bold text-danger-emphasis mb-2" style="cursor: pointer;">Respuesta de error (404 Not Found)</summary>
                             <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
                                 <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-error">Copiar</button>
@@ -277,122 +278,125 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Sección: Contador API -->
         <section id="contador" class="py-5 bg-body">
             <div class="container">
-                <div class="sticky-top bg-body py-2 mb-4">
+                <div class="sticky-top bg-body py-2 mb-3">
                     <h2 class="h4 fw-bold mb-0">Contador</h2>
                 </div>
 
-                <!-- GET /contador/:nombre -->
-                <div class="mb-5 pb-5">
-                    <!-- Endpoint -->
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <span class="badge bg-success font-monospace">GET</span>
-                        <code class="fs-6 text-body">/contador/:nombre</code>
-                    </div>
-
-                    <!-- Explicación -->
-                    <p class="text-secondary mb-3">Obtiene el valor actual del contador. Si no existe, devuelve 0.</p>
-
-                    <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
-                    <div class="table-responsive mb-4">
-                        <table class="table table-sm align-middle">
-                            <thead>
-                                <tr class="text-secondary">
-                                    <th>Parámetro</th>
-                                    <th>Tipo</th>
-                                    <th>Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>:nombre</code></td>
-                                    <td>string</td>
-                                    <td>Identificador único del contador a consultar.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <!-- Ejemplos apilados -->
-                    <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
-                        <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-get-contador">Copiar</button>
-                            <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
-const respuesta = await res.json();
-console.log(respuesta.count); // 0</code></pre>
+                <div class="d-flex flex-column gap-5">
+                    <!-- GET /contador/:nombre -->
+                    <div>
+                        <!-- Endpoint -->
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-success font-monospace">GET</span>
+                            <code class="fs-6 text-body">/contador/:nombre</code>
                         </div>
 
-                        <details class="mb-3">
-                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
-                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
-                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
-                                <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
+                        <!-- Explicación -->
+                        <p class="text-secondary mb-3">Obtiene el valor actual del contador. Si no existe, devuelve 0.</p>
+
+                        <!-- Parámetros -->
+                        <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr class="text-secondary">
+                                        <th>Parámetro</th>
+                                        <th>Tipo</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>:nombre</code></td>
+                                        <td>string</td>
+                                        <td>Identificador único del contador a consultar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Ejemplos apilados -->
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
+                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-get-contador">Copiar</button>
+                                <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
+const respuesta = await res.json();
+console.log(respuesta.count); // 0</code></pre>
+                            </div>
+
+                            <details class="mb-3">
+                                <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                                <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
+                                    <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
+                                    <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
   "count": 0
 }</code></pre>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-
-                <!-- POST /contador/:nombre -->
-                <div class="mb-4">
-                    <!-- Endpoint -->
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <span class="badge bg-primary font-monospace">POST</span>
-                        <code class="fs-6 text-body">/contador/:nombre</code>
+                                </div>
+                            </details>
+                        </div>
                     </div>
 
-                    <!-- Explicación -->
-                    <p class="text-secondary mb-3">Incrementa en 1 el contador y devuelve el nuevo valor.</p>
+                    <!-- POST /contador/:nombre -->
+                    <div>
+                        <!-- Endpoint -->
+                        <div class="d-flex align-items-center gap-2 mb-2">
+                            <span class="badge bg-primary font-monospace">POST</span>
+                            <code class="fs-6 text-body">/contador/:nombre</code>
+                        </div>
 
-                    <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
-                    <div class="table-responsive mb-4">
-                        <table class="table table-sm align-middle">
-                            <thead>
-                                <tr class="text-secondary">
-                                    <th>Parámetro</th>
-                                    <th>Tipo</th>
-                                    <th>Descripción</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><code>:nombre</code></td>
-                                    <td>string</td>
-                                    <td>Identificador único del contador a incrementar.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                        <!-- Explicación -->
+                        <p class="text-secondary mb-3">Incrementa en 1 el contador y devuelve el nuevo valor.</p>
 
-                    <!-- Ejemplos apilados -->
-                    <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
-                        <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
-                            <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-post-contador">Copiar</button>
-                            <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
+                        <!-- Parámetros -->
+                        <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
+                        <div class="table-responsive mb-4">
+                            <table class="table table-sm align-middle">
+                                <thead>
+                                    <tr class="text-secondary">
+                                        <th>Parámetro</th>
+                                        <th>Tipo</th>
+                                        <th>Descripción</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>:nombre</code></td>
+                                        <td>string</td>
+                                        <td>Identificador único del contador a incrementar.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Ejemplos apilados -->
+                        <div class="mb-3">
+                            <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
+                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto mb-4">
+                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-post-contador">Copiar</button>
+                                <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
   method: 'POST'
 });
 const respuesta = await res.json();
 console.log(respuesta.count); // 1</code></pre>
-                        </div>
+                            </div>
 
-                        <details class="mb-3">
-                            <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
-                            <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
-                                <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
-                                <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
+                            <details>
+                                <summary class="h6 fw-bold mb-2" style="cursor: pointer;">Respuesta (200 OK)</summary>
+                                <div class="position-relative bg-body-secondary border rounded p-3 overflow-x-auto">
+                                    <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
+                                    <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
   "count": 1
 }</code></pre>
-                            </div>
-                        </details>
+                                </div>
+                            </details>
+                        </div>
                     </div>
                 </div>
 
