@@ -63,7 +63,7 @@
                 <p class="text-secondary mb-4">
                     Endpoints y datos de prueba para los trabajos prácticos de la materia 
                     <a href="https://plataformas-moviles.tecnica4berazategui.edu.ar/" target="_blank" rel="noopener noreferrer" class="text-decoration-underline text-secondary-emphasis">Proyecto de Desarrollo de Software para Plataformas Móviles</a>. 
-                    Las respuestas se entregan exclusivamente en formato JSON.
+                    Las respuestas son siempre en formato JSON.
                 </p>
 
                 <div class="input-group" style="max-width: 380px;">
@@ -89,16 +89,15 @@
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Devuelve el listado resumido de comidas típicas con filtros por categoría, búsqueda por texto, ordenamiento y paginación. Los campos devueltos corresponden exactamente a los campos evaluados en la búsqueda y el ordenamiento.</p>
+                    <p class="text-secondary mb-3">Devuelve el listado de comidas típicas (en formato resumido) con filtros por categoría, búsqueda por texto, ordenamiento y paginación.</p>
 
                     <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en query</h3>
                     <div class="table-responsive mb-4">
                         <table class="table table-sm align-middle">
                             <thead>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
-                                    <th>Ubicación</th>
                                     <th>Tipo</th>
                                     <th>Valores válidos</th>
                                     <th>Por defecto</th>
@@ -108,7 +107,6 @@
                             <tbody>
                                 <tr>
                                     <td><code>grupo</code></td>
-                                    <td>Query</td>
                                     <td>string</td>
                                     <td><code>salados</code>, <code>dulces</code>, <code>bebidas</code></td>
                                     <td>—</td>
@@ -116,7 +114,6 @@
                                 </tr>
                                 <tr>
                                     <td><code>busqueda</code></td>
-                                    <td>Query</td>
                                     <td>string</td>
                                     <td>Texto libre</td>
                                     <td>—</td>
@@ -124,7 +121,6 @@
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
-                                    <td>Query</td>
                                     <td>string</td>
                                     <td><code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code></td>
                                     <td><code>nombre</code></td>
@@ -132,7 +128,6 @@
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_sentido</code></td>
-                                    <td>Query</td>
                                     <td>string</td>
                                     <td><code>asc</code>, <code>desc</code></td>
                                     <td><code>asc</code></td>
@@ -140,7 +135,6 @@
                                 </tr>
                                 <tr>
                                     <td><code>pagina</code></td>
-                                    <td>Query</td>
                                     <td>number</td>
                                     <td>Entero &ge; 1</td>
                                     <td><code>1</code></td>
@@ -148,7 +142,6 @@
                                 </tr>
                                 <tr>
                                     <td><code>limite</code></td>
-                                    <td>Query</td>
                                     <td>number</td>
                                     <td>Entero &ge; 1</td>
                                     <td><code>5</code></td>
@@ -202,16 +195,15 @@ console.log(respuesta.total, respuesta.data);</code></pre>
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Obtiene la información detallada y completa de una comida por su <code>:id</code> (incluye imagen, descripción completa, ingredientes principales y etiquetas).</p>
+                    <p class="text-secondary mb-3">Obtiene la información detallada de una comida por su <code>:id</code>, incluyendo imagen, descripción, ingredientes principales y etiquetas.</p>
 
                     <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
                     <div class="table-responsive mb-4">
                         <table class="table table-sm align-middle">
                             <thead>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
-                                    <th>Ubicación</th>
                                     <th>Tipo</th>
                                     <th>Requerido</th>
                                     <th>Descripción</th>
@@ -220,7 +212,6 @@ console.log(respuesta.total, respuesta.data);</code></pre>
                             <tbody>
                                 <tr>
                                     <td><code>:id</code></td>
-                                    <td>Ruta (Path)</td>
                                     <td>string</td>
                                     <td>Sí</td>
                                     <td>Identificador único del elemento (ej: <code>asado</code>, <code>empanadas</code>, <code>mate</code>).</td>
@@ -292,13 +283,12 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                     <p class="text-secondary mb-3">Obtiene el valor numérico actual del contador especificado por <code>:nombre</code>. Si no existe, retorna 0.</p>
 
                     <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
                     <div class="table-responsive mb-4">
                         <table class="table table-sm align-middle">
                             <thead>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
-                                    <th>Ubicación</th>
                                     <th>Tipo</th>
                                     <th>Requerido</th>
                                     <th>Descripción</th>
@@ -307,7 +297,6 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                             <tbody>
                                 <tr>
                                     <td><code>:nombre</code></td>
-                                    <td>Ruta (Path)</td>
                                     <td>string</td>
                                     <td>Sí</td>
                                     <td>Identificador único del contador a consultar.</td>
@@ -348,13 +337,12 @@ console.log(respuesta.count); // 0</code></pre>
                     <p class="text-secondary mb-3">Incrementa en 1 unidad el valor del contador especificado por <code>:nombre</code> y devuelve el nuevo total acumulado.</p>
 
                     <!-- Parámetros -->
-                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros</h3>
+                    <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
                     <div class="table-responsive mb-4">
                         <table class="table table-sm align-middle">
                             <thead>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
-                                    <th>Ubicación</th>
                                     <th>Tipo</th>
                                     <th>Requerido</th>
                                     <th>Descripción</th>
@@ -363,7 +351,6 @@ console.log(respuesta.count); // 0</code></pre>
                             <tbody>
                                 <tr>
                                     <td><code>:nombre</code></td>
-                                    <td>Ruta (Path)</td>
                                     <td>string</td>
                                     <td>Sí</td>
                                     <td>Identificador único del contador a incrementar.</td>
