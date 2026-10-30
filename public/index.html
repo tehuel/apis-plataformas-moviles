@@ -58,7 +58,7 @@
         <section id="inicio" class="py-5 bg-body">
             <div class="container">
                 <div class="sticky-top bg-body pt-3 pb-2 mb-2">
-                    <h1 class="h3 fw-bold mb-0">Documentación de API de pruebas para Plataformas Móviles</h1>
+                    <h1 class="h3 fw-bold mb-0">Documentación de la API</h1>
                 </div>
                 <p class="text-secondary mb-4">
                     Endpoints y datos de prueba para los trabajos prácticos de la materia 
@@ -99,7 +99,6 @@
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
                                     <th>Tipo</th>
-                                    <th>Valores válidos</th>
                                     <th>Por defecto</th>
                                     <th>Descripción</th>
                                 </tr>
@@ -108,44 +107,38 @@
                                 <tr>
                                     <td><code>grupo</code></td>
                                     <td>string</td>
-                                    <td><code>salados</code>, <code>dulces</code>, <code>bebidas</code></td>
                                     <td>—</td>
-                                    <td>Filtra por categoría.</td>
+                                    <td>Filtra por categoría (<code>salados</code>, <code>dulces</code>, <code>bebidas</code>).</td>
                                 </tr>
                                 <tr>
                                     <td><code>busqueda</code></td>
                                     <td>string</td>
-                                    <td>Texto libre</td>
                                     <td>—</td>
-                                    <td>Busca en id, nombre, imagen, grupo o tipo.</td>
+                                    <td>Búsqueda por texto en id, nombre, imagen, grupo o tipo.</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_campo</code></td>
                                     <td>string</td>
-                                    <td><code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code></td>
                                     <td><code>nombre</code></td>
-                                    <td>Campo para ordenar.</td>
+                                    <td>Campo para ordenar (<code>id</code>, <code>nombre</code>, <code>imagen</code>, <code>grupo</code>, <code>tipo</code>).</td>
                                 </tr>
                                 <tr>
                                     <td><code>ordenar_sentido</code></td>
                                     <td>string</td>
-                                    <td><code>asc</code>, <code>desc</code></td>
                                     <td><code>asc</code></td>
-                                    <td>Sentido del ordenamiento.</td>
+                                    <td>Sentido del ordenamiento (<code>asc</code>, <code>desc</code>).</td>
                                 </tr>
                                 <tr>
                                     <td><code>pagina</code></td>
                                     <td>number</td>
-                                    <td>Entero &ge; 1</td>
                                     <td><code>1</code></td>
-                                    <td>Número de página solicitada.</td>
+                                    <td>Número de página solicitada (entero &ge; 1).</td>
                                 </tr>
                                 <tr>
                                     <td><code>limite</code></td>
                                     <td>number</td>
-                                    <td>Entero &ge; 1</td>
                                     <td><code>5</code></td>
-                                    <td>Cantidad de elementos por página.</td>
+                                    <td>Cantidad de elementos por página (entero &ge; 1).</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -153,7 +146,7 @@
 
                     <!-- Ejemplos apilados uno debajo del otro -->
                     <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
                         <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comidas">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-comidas"><code>const res = await fetch('https://api.tehuel.com.ar/comidas?grupo=salados&limite=5');
@@ -161,7 +154,7 @@ const respuesta = await res.json();
 console.log(respuesta.total, respuesta.data);</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
                         <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comidas">Copiar</button>
                             <pre class="mb-0 text-success-emphasis" id="json-comidas"><code>{
@@ -205,7 +198,6 @@ console.log(respuesta.total, respuesta.data);</code></pre>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
                                     <th>Tipo</th>
-                                    <th>Requerido</th>
                                     <th>Descripción</th>
                                 </tr>
                             </thead>
@@ -213,7 +205,6 @@ console.log(respuesta.total, respuesta.data);</code></pre>
                                 <tr>
                                     <td><code>:id</code></td>
                                     <td>string</td>
-                                    <td>Sí</td>
                                     <td>Identificador único del elemento (ej: <code>asado</code>, <code>empanadas</code>, <code>mate</code>).</td>
                                 </tr>
                             </tbody>
@@ -222,7 +213,7 @@ console.log(respuesta.total, respuesta.data);</code></pre>
 
                     <!-- Ejemplos apilados -->
                     <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
                         <div class="position-relative bg-body border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-comida-detalle">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-comida-detalle"><code>const res = await fetch('https://api.tehuel.com.ar/comidas/empanadas');
@@ -230,7 +221,7 @@ const comida = await res.json();
 console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
                         <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-comida-detalle">Copiar</button>
                             <pre class="mb-0 text-success-emphasis" id="json-comida-detalle"><code>{
@@ -280,7 +271,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Obtiene el valor numérico actual del contador especificado por <code>:nombre</code>. Si no existe, retorna 0.</p>
+                    <p class="text-secondary mb-3">Obtiene el valor actual del contador. Si no existe, devuelve 0.</p>
 
                     <!-- Parámetros -->
                     <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
@@ -290,7 +281,6 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
                                     <th>Tipo</th>
-                                    <th>Requerido</th>
                                     <th>Descripción</th>
                                 </tr>
                             </thead>
@@ -298,7 +288,6 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
                                 <tr>
                                     <td><code>:nombre</code></td>
                                     <td>string</td>
-                                    <td>Sí</td>
                                     <td>Identificador único del contador a consultar.</td>
                                 </tr>
                             </tbody>
@@ -307,7 +296,7 @@ console.log(comida.nombre, comida.ingredientes_principales);</code></pre>
 
                     <!-- Ejemplos apilados -->
                     <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
                         <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-get-contador">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-get-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas');
@@ -315,7 +304,7 @@ const respuesta = await res.json();
 console.log(respuesta.count); // 0</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
                         <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-get-contador">Copiar</button>
                             <pre class="mb-0 text-success-emphasis" id="json-get-contador"><code>{
@@ -334,7 +323,7 @@ console.log(respuesta.count); // 0</code></pre>
                     </div>
 
                     <!-- Explicación -->
-                    <p class="text-secondary mb-3">Incrementa en 1 unidad el valor del contador especificado por <code>:nombre</code> y devuelve el nuevo total acumulado.</p>
+                    <p class="text-secondary mb-3">Incrementa en 1 el contador y devuelve el nuevo valor.</p>
 
                     <!-- Parámetros -->
                     <h3 class="h6 fw-bold mt-4 mb-2">Parámetros en ruta</h3>
@@ -344,7 +333,6 @@ console.log(respuesta.count); // 0</code></pre>
                                 <tr class="text-secondary">
                                     <th>Parámetro</th>
                                     <th>Tipo</th>
-                                    <th>Requerido</th>
                                     <th>Descripción</th>
                                 </tr>
                             </thead>
@@ -352,7 +340,6 @@ console.log(respuesta.count); // 0</code></pre>
                                 <tr>
                                     <td><code>:nombre</code></td>
                                     <td>string</td>
-                                    <td>Sí</td>
                                     <td>Identificador único del contador a incrementar.</td>
                                 </tr>
                             </tbody>
@@ -361,7 +348,7 @@ console.log(respuesta.count); // 0</code></pre>
 
                     <!-- Ejemplos apilados -->
                     <div class="mb-3">
-                        <h3 class="h6 fw-bold mb-2">Ejemplo en JavaScript</h3>
+                        <h3 class="h6 fw-bold mb-2">Ejemplo</h3>
                         <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto mb-4">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="js-post-contador">Copiar</button>
                             <pre class="mb-0 text-info-emphasis" id="js-post-contador"><code>const res = await fetch('https://api.tehuel.com.ar/contador/visitas', {
@@ -371,7 +358,7 @@ const respuesta = await res.json();
 console.log(respuesta.count); // 1</code></pre>
                         </div>
 
-                        <h3 class="h6 fw-bold mb-2">Ejemplo de respuesta</h3>
+                        <h3 class="h6 fw-bold mb-2">Respuesta</h3>
                         <div class="position-relative bg-body-tertiary border rounded p-3 overflow-x-auto">
                             <button class="btn btn-outline-secondary btn-sm position-absolute top-0 end-0 m-2 btn-copy" data-target="json-post-contador">Copiar</button>
                             <pre class="mb-0 text-success-emphasis" id="json-post-contador"><code>{
