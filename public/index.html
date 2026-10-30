@@ -6,18 +6,55 @@
     <title>APIs Plataformas Móviles</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- RapiDoc (Cliente HTTP interactivo OpenAPI) -->
+    <script type="module" src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
     <script>
         const isDarkInLocalStorage = "dark" === localStorage.theme,
               isThemeNotDefined = !("theme" in localStorage),
               isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
         (isDarkInLocalStorage || isThemeNotDefined && isSystemDark) && (document.documentElement.dataset.bsTheme = "dark");
 
+        function syncRapiDocTheme() {
+            const isDark = document.documentElement.dataset.bsTheme === "dark";
+            const rapiDoc = document.getElementById("apiTester");
+            if (rapiDoc) {
+                rapiDoc.setAttribute("theme", isDark ? "dark" : "light");
+            }
+            injectRapiDocStyles();
+        }
+
+        function injectRapiDocStyles() {
+            const rapiDoc = document.getElementById("apiTester");
+            if (rapiDoc && rapiDoc.shadowRoot && !rapiDoc.shadowRoot.getElementById("hide-static-resp-style")) {
+                const style = document.createElement("style");
+                style.id = "hide-static-resp-style";
+                style.textContent = `
+                    api-response { display: none !important; }
+                `;
+                rapiDoc.shadowRoot.appendChild(style);
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
+            syncRapiDocTheme();
+            const rapiDoc = document.getElementById("apiTester");
+            if (rapiDoc) {
+                rapiDoc.addEventListener("after-render", syncRapiDocTheme);
+            }
+            // Asegurar inyección una vez que el shadowRoot esté listo
+            let checkCount = 0;
+            const timer = setInterval(() => {
+                injectRapiDocStyles();
+                checkCount++;
+                if (checkCount > 10) clearInterval(timer);
+            }, 300);
+
             document.querySelectorAll(".dark-toggle-button").forEach(e => {
                 e.addEventListener("click", () => {
                     const e = "dark" === document.documentElement.dataset.bsTheme ? "light" : "dark";
                     document.documentElement.dataset.bsTheme = e;
                     localStorage.theme = e;
+                    syncRapiDocTheme();
                 });
             });
         });
@@ -406,42 +443,46 @@ console.log(respuesta.count); // 1</code></pre>
         <!-- Sección: Probar API -->
         <section id="probador" class="py-5 bg-body-secondary">
             <div class="container">
-                <div class="sticky-top bg-body-secondary py-2 mb-2">
-                    <h2 class="h4 fw-bold mb-0">Probar API</h2>
-                </div>
-                <p class="text-secondary mb-4">Ejecuta llamadas directas a los endpoints.</p>
-
-                <form id="testerForm" class="row g-2 mb-3">
-                    <div class="col-md-2">
-                        <select class="form-select font-monospace" id="testerMethod" aria-label="Método HTTP">
-                            <option value="GET">GET</option>
-                            <option value="POST">POST</option>
-                        </select>
+                <div class="mb-3">
+                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                        <div>
+                            <h2 class="h4 fw-bold mb-1">Probar API</h2>
+                            <p class="text-secondary mb-0">Cliente interactivo para probar cada endpoint con un clic.</p>
+                        </div>
+                        <div>
+                            <a href="/openapi.json" target="_blank" rel="noopener noreferrer" class="btn btn-outline-secondary btn-sm font-monospace">
+                                openapi.json
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control font-monospace" id="testerPath" value="/comidas?limite=3" placeholder="/endpoint" aria-label="Ruta del endpoint" required>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary w-100" id="btnSendRequest" type="submit">Enviar</button>
-                    </div>
-                </form>
-
-                <div class="d-flex flex-wrap gap-1 mb-3">
-                    <span class="small text-secondary align-self-center me-2">Ejemplos:</span>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas">/comidas</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?grupo=salados">/comidas?grupo=salados</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas?busqueda=salados">/comidas?busqueda=salados</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/comidas/empanadas">/comidas/empanadas</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="GET" data-path="/contador/demo">GET /contador/demo</button>
-                    <button class="btn btn-outline-secondary btn-sm py-0 quick-endpoint" type="button" data-method="POST" data-path="/contador/demo">POST /contador/demo</button>
                 </div>
 
-                <div class="d-flex justify-content-between align-items-center mb-2">
-                    <span class="small text-secondary">Respuesta</span>
-                    <div id="testerStatus"></div>
-                </div>
-                <div class="position-relative bg-body border rounded p-3 overflow-x-auto">
-                    <pre class="mb-0 font-monospace small" id="testerOutput" style="max-height: 350px;"><code>Presiona Enter o haz clic en "Enviar" para probar una petición...</code></pre>
+                <div class="card border rounded-3 shadow-sm overflow-hidden p-0">
+                    <rapi-doc
+                        id="apiTester"
+                        spec-url="/openapi.json"
+                        render-style="view"
+                        layout="column"
+                        theme="dark"
+                        show-header="false"
+                        show-info="false"
+                        show-components="false"
+                        show-side-nav="false"
+                        allow-authentication="false"
+                        allow-server-selection="false"
+                        allow-search="false"
+                        allow-advanced-search="false"
+                        allow-spec-url-load="false"
+                        allow-spec-file-load="false"
+                        allow-spec-file-download="false"
+                        allow-try="true"
+                        fill-request-fields-with-example="true"
+                        default-schema-tab="example"
+                        schema-style="table"
+                        regular-font="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+                        mono-font="SFMono-Regular, Menlo, Monaco, Consolas, monospace"
+                        style="width: 100%; min-height: 500px; display: block;"
+                    ></rapi-doc>
                 </div>
             </div>
         </section>
@@ -489,60 +530,6 @@ console.log(respuesta.count); // 1</code></pre>
             const originalText = btn.textContent;
             btn.textContent = 'Copiado';
             setTimeout(() => btn.textContent = originalText, 1500);
-        });
-
-        // Ejemplos rápidos y probador en vivo
-        const testerForm = document.getElementById('testerForm');
-        const btnSend = document.getElementById('btnSendRequest');
-        const testerMethod = document.getElementById('testerMethod');
-        const testerPath = document.getElementById('testerPath');
-        const testerOutput = document.getElementById('testerOutput');
-        const testerStatus = document.getElementById('testerStatus');
-
-        document.querySelectorAll('.quick-endpoint').forEach(btn => {
-            btn.addEventListener('click', () => {
-                testerMethod.value = btn.getAttribute('data-method');
-                testerPath.value = btn.getAttribute('data-path');
-                testerForm.requestSubmit();
-            });
-        });
-
-        testerForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const method = testerMethod.value;
-            let path = testerPath.value.trim();
-            if (!path.startsWith('/')) {
-                path = '/' + path;
-            }
-
-            btnSend.disabled = true;
-            testerStatus.innerHTML = '<span class="badge bg-secondary">Cargando...</span>';
-            testerOutput.textContent = 'Enviando petición...';
-
-            const startTime = performance.now();
-            try {
-                const response = await fetch(path, { method });
-                const duration = Math.round(performance.now() - startTime);
-                const statusBadge = response.ok 
-                    ? `<span class="badge bg-success">${response.status} ${response.statusText || 'OK'}</span>`
-                    : `<span class="badge bg-danger">${response.status} ${response.statusText || 'Error'}</span>`;
-                const timeBadge = `<span class="badge bg-secondary-subtle text-secondary-emphasis">${duration} ms</span>`;
-                testerStatus.innerHTML = statusBadge + ' ' + timeBadge;
-
-                const contentType = response.headers.get('content-type') || '';
-                if (contentType.includes('application/json')) {
-                    const data = await response.json();
-                    testerOutput.textContent = JSON.stringify(data, null, 2);
-                } else {
-                    const text = await response.text();
-                    testerOutput.textContent = text;
-                }
-            } catch (err) {
-                testerStatus.innerHTML = '<span class="badge bg-danger">Error</span>';
-                testerOutput.textContent = 'No se pudo completar la solicitud: ' + err.message;
-            } finally {
-                btnSend.disabled = false;
-            }
         });
 
         // Contador de visitas
