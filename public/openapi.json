@@ -1,0 +1,128 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "APIs Plataformas Móviles",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "/" }
+  ],
+  "tags": [
+    { "name": "Comidas" },
+    { "name": "Contador" }
+  ],
+  "paths": {
+    "/comidas": {
+      "get": {
+        "tags": ["Comidas"],
+        "summary": "Listado de comidas",
+        "parameters": [
+          {
+            "name": "grupo",
+            "in": "query",
+            "description": "Filtra por categoría",
+            "schema": {
+              "type": "string",
+              "enum": ["salados", "dulces", "bebidas"]
+            },
+            "example": "salados"
+          },
+          {
+            "name": "busqueda",
+            "in": "query",
+            "description": "Búsqueda por texto",
+            "schema": { "type": "string" },
+            "example": "empanada"
+          },
+          {
+            "name": "ordenar_campo",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["id", "nombre", "imagen", "grupo", "tipo"],
+              "default": "nombre"
+            },
+            "example": "nombre"
+          },
+          {
+            "name": "ordenar_sentido",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "enum": ["asc", "desc"],
+              "default": "asc"
+            },
+            "example": "asc"
+          },
+          {
+            "name": "pagina",
+            "in": "query",
+            "schema": { "type": "integer", "default": 1 },
+            "example": 1
+          },
+          {
+            "name": "limite",
+            "in": "query",
+            "schema": { "type": "integer", "default": 5 },
+            "example": 5
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    },
+    "/comidas/{id}": {
+      "get": {
+        "tags": ["Comidas"],
+        "summary": "Detalle de comida",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "example": "empanadas"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    },
+    "/contador/{nombre}": {
+      "get": {
+        "tags": ["Contador"],
+        "summary": "Consultar contador",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "example": "demo"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      },
+      "post": {
+        "tags": ["Contador"],
+        "summary": "Incrementar contador",
+        "parameters": [
+          {
+            "name": "nombre",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" },
+            "example": "demo"
+          }
+        ],
+        "responses": {
+          "200": { "description": "OK" }
+        }
+      }
+    }
+  }
+}
