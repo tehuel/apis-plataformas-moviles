@@ -1,23 +1,49 @@
 import { Hono } from 'hono'
+import { Database } from 'bun:sqlite'
+import { mkdirSync } from 'node:fs'
+import { dirname } from 'node:path'
 
-type Bindings = {
-    COUNTER_KV: KVNamespace
+const dbPath = process.env.DB_PATH || './data/counters.db'
+if (dbPath !== ':memory:') {
+    mkdirSync(dirname(dbPath), { recursive: true })
 }
 
-const app = new Hono<{ Bindings: Bindings }>()
+export const db = new Database(dbPath)
+db.exec('PRAGMA journal_mode = WAL;')
+db.exec('PRAGMA busy_timeout = 5000;')
+db.exec(`
+    CREATE TABLE IF NOT EXISTS counters (
+        name TEXT PRIMARY KEY,
+        count INTEGER NOT NULL DEFAULT 0
+    )
+`)
 
-app.get('/:name', async (c) => {
-    const name = c.req.param('name')
-    const current = parseInt(await c.env.COUNTER_KV.get(name) || '0')
-    return c.json({ count: current })
+process.on('exit', () => {
+    db.close()
 })
 
-app.post('/:name', async (c) => {
+const getCounter = db.query<{ count: number }, [string]>(
+    'SELECT count FROM counters WHERE name = ?'
+)
+
+const incrementCounter = db.query<{ count: number }, [string]>(
+    `INSERT INTO counters (name, count) VALUES (?, 1)
+     ON CONFLICT(name) DO UPDATE SET count = count + 1
+     RETURNING count`
+)
+
+const app = new Hono()
+
+app.get('/:name', (c) => {
     const name = c.req.param('name')
-    const current = parseInt(await c.env.COUNTER_KV.get(name) || '0')
-    const updated = current + 1
-    await c.env.COUNTER_KV.put(name, updated.toString())
-    return c.json({ count: updated })
+    const row = getCounter.get(name)
+    return c.json({ count: row?.count ?? 0 })
+})
+
+app.post('/:name', (c) => {
+    const name = c.req.param('name')
+    const row = incrementCounter.get(name)!
+    return c.json({ count: row.count })
 })
 
 export default app
