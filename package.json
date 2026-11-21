@@ -1,14 +1,17 @@
 {
   "name": "api-plamov",
+  "type": "module",
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "dev": "bun --watch src/index.ts",
+    "start": "bun run src/index.ts",
+    "test": "DB_PATH=:memory: bun test",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "hono": "^4.13.14"
   },
   "devDependencies": {
-    "wrangler": "^4.155.0"
+    "@types/bun": "latest",
+    "typescript": "^5.8.0"
   }
 }
